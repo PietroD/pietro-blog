@@ -29,5 +29,17 @@
       <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://youtu.be/syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
     </item>
     
+    <item>
+      <title>Principal component analysis with any kind of data in R</title>
+      <link>/2018/09/05/principal-component-analysis-with-any-kind-of-data-in-r/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/05/principal-component-analysis-with-any-kind-of-data-in-r/</guid>
+      <description>Principal Component Analysis with various data - tidyverse way In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+For example
+ </description>
+    </item>
+    
   </channel>
 </rss>

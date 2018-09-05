@@ -1,0 +1,34 @@
+---
+title: "Principal component analysis with any kind of data in R"
+author: "Pietro Delfino"
+date: '2018-09-05'
+tags:
+- R coding
+- statistics
+- PCA
+- tidyverse
+categories: R, github, stats, tidyverse, PCA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+# Principal Component Analysis with various data - tidyverse way
+
+In my daily work I am often asked to perform Principal Component Analysis of various type of *-omics* data, for example data coming from RNA-Seq.
+
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+
+For example
+
+```{r, include=FALSE, error=FALSE, warning=FALSE}
+x <- read_xlsx('QQ colture dati aggiuntivi 28082018.xlsx')
+```
+
+```{r, include=FALSE, error=FALSE, warning=FALSE}
+x
+```
+
