@@ -9,4 +9,4 @@ tags:
 categories: R
 ---
 
-This is my new website where I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples 
+This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples 
