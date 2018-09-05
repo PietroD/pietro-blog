@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Pietro&#39;s website</title>
-    <link>/post/</link>
-    <description>Recent content in Posts on Pietro&#39;s website</description>
+    <title>R Blogdown on Pietro&#39;s website</title>
+    <link>/tags/r-blogdown/</link>
+    <description>Recent content in R Blogdown on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/r-blogdown/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>First post</title>
-      <link>/2018/09/05/first-post/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/first-post/</guid>
-      <description>This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples</description>
-    </item>
     
     <item>
       <title>How to create a website using blogdown, RMarkdown, Github and Netlify</title>
