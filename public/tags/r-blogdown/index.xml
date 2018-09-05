@@ -17,7 +17,7 @@
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</guid>
-      <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://www.youtube.com/watch?v=syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
+      <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://youtu.be/syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
     </item>
     
   </channel>
