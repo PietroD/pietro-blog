@@ -1,0 +1,12 @@
+---
+title: First post
+author: Pietro Delfino
+date: '2018-09-05'
+slug: first-post
+categories:
+  - R
+tags:
+  - R Markdown
+---
+
+Trying publish content as post
