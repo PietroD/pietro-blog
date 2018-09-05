@@ -19,7 +19,7 @@
       <guid>/2018/09/05/principal-component-analysis-with-any-kind-of-data-in-r/</guid>
       <description>The tidyverse way In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
-For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample</description>
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>
     </item>
     
   </channel>
