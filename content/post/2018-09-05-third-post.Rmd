@@ -14,6 +14,7 @@ categories: R, github, stats, tidyverse, PCA
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(readxl)
+library(skimr)
 ```
 
 # The tidyverse way
@@ -45,14 +46,19 @@ I recently started the transition to the [**tidyverse**](https://www.tidyverse.o
 
 Also for performig PCA I came up with a tidyverse script that goes from a dataframe (a tibble) like the one above and the output of a PCA in a couple of steps.
 
-Before going to the PCA step I want to show how I usually proceed with exploratory analysis on a tibble like this
+Before going to the PCA step I want to show how I usually proceed with exploratory analysis on a tibble like this.
 
-First thing I usually do is a `glimpse` of the tibble
+First thing I usually do is a `glimpse` of the tibble that gives me an overview of all the variables in my df.
 
 ```{r}
 glimpse(x)
 ```
 
+We can see that the values that I'd need for the PCA are in columns of the double type, but we also have two columns, `Row` and `Index` which are of the same double type. Keep this in mind for later. For computing PCA I only need the columns with the mass spec intensities values, then I want to focus on those columns, using another wonderful command from the `skimr` package.
+
+```{r}
+skim(x[8:length(names(x))])
+```
 
 
 
