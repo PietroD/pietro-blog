@@ -18,14 +18,19 @@ library(readxl)
 
 # The tidyverse way
 
-In my daily work I am often asked to perform Principal Component Analysis of various type of *-omics* data, for example data coming from RNA-Seq.
+In my daily work I am often asked to perform [**Principal Component Analysis**](https://en.wikipedia.org/wiki/Principal_component_analysis) of various type of *-omics* data, for example data coming from RNA-Seq.
 
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 
-For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:
 
 ```{r, include=FALSE, error=FALSE, warning=FALSE}
 x <- read_xlsx('QQ colture dati aggiuntivi 28082018.xlsx')
+
+x <- 
+    x %>%
+    filter(!is.na(Row))
+
 names(x) <- gsub('Coltura organotipica ', '', names(x))
 names(x) <- gsub('TOPO_', '', names(x))
 names(x) <- gsub('SWATH', '', names(x))
@@ -35,4 +40,19 @@ names(x) <- gsub('SWATH', '', names(x))
 x %>% 
     select(`Peak Name`, 8:11)
 ```
+
+I recently started the transition to the [**tidyverse**](https://www.tidyverse.org/) approach of data science into R, after having learnt R the classic way a couple of years ago.
+
+Also for performig PCA I came up with a tidyverse script that goes from a dataframe (a tibble) like the one above and the output of a PCA in a couple of steps.
+
+Before going to the PCA step I want to show how I usually proceed with exploratory analysis on a tibble like this
+
+First thing I usually do is a `glimpse` of the tibble
+
+```{r}
+glimpse(x)
+```
+
+
+
 
