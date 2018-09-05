@@ -11,4 +11,8 @@ The approaches I am following are mainly *in silico*; that means that I work mos
 
 Recently I fall in love with data and ways to manipulate them. Since then I became interested in that wonderful world related to [**R**](https://www.r-project.org/), which is my daily working “language”.
 
-![Veraison is cool!](../images/IMG_20160809_102812137_HDR.jpg)
+![Veraison is cool!](/./about_files/IMG_20160809_102812137_HDR.jpg)
+
+
+
+
