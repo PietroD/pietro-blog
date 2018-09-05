@@ -16,19 +16,23 @@ library(tidyverse)
 library(readxl)
 ```
 
-# Principal Component Analysis with various data - tidyverse way
+# The tidyverse way
 
 In my daily work I am often asked to perform Principal Component Analysis of various type of *-omics* data, for example data coming from RNA-Seq.
 
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 
-For example
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample
 
 ```{r, include=FALSE, error=FALSE, warning=FALSE}
 x <- read_xlsx('QQ colture dati aggiuntivi 28082018.xlsx')
+names(x) <- gsub('Coltura organotipica ', '', names(x))
+names(x) <- gsub('TOPO_', '', names(x))
+names(x) <- gsub('SWATH', '', names(x))
 ```
 
-```{r, include=TRUE, error=FALSE, warning=FALSE}
-x
+```{r echo=FALSE, error=FALSE, warning=FALSE}
+x %>% 
+    select(`Peak Name`, 8:11)
 ```
 
