@@ -61,7 +61,7 @@
 
   <article class="article">
     
-    <span class="article-duration">2 min read</span>
+    <span class="article-duration">1 min read</span>
     
 
     <h1 class="article-title">Principal component analysis with any kind of data in R</h1>
@@ -71,55 +71,25 @@
     
 
     <div class="article-content">
-      <div id="principal-component-analysis-with-various-data---tidyverse-way" class="section level1">
-<h1>Principal Component Analysis with various data - tidyverse way</h1>
+      <div id="the-tidyverse-way" class="section level1">
+<h1>The tidyverse way</h1>
 <p>In my daily work I am often asked to perform Principal Component Analysis of various type of <em>-omics</em> data, for example data coming from RNA-Seq.</p>
 <p>With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.</p>
-<p>For example</p>
-<pre class="r"><code>x</code></pre>
-<pre><code>## # A tibble: 846 x 37
-##      Row Index `Peak Name` `m/z` `Ret. Time` Group Use   `Coltura organo…
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt;
-##  1    NA    NA &lt;NA&gt;        &lt;NA&gt;  &lt;NA&gt;        &lt;NA&gt;  Group               5 
-##  2     1     1 sp|P19137|… N/A   N/A         Lami… TRUE            92493.
-##  3     2     2 sp|P02469|… N/A   N/A         sp|P… TRUE           101139.
-##  4     3     3 sp|Q80X90|… N/A   N/A         Fila… TRUE           104487.
-##  5     4     4 sp|P02468|… N/A   N/A         sp|P… TRUE           133946.
-##  6     5     5 sp|P60710|… N/A   N/A         sp|P… TRUE           479363.
-##  7     6     6 sp|P52480|… N/A   N/A         sp|P… TRUE           372423.
-##  8     7     7 sp|P16858|… N/A   N/A         sp|P… TRUE           646268.
-##  9     8     8 sp|Q8BTM8|… N/A   N/A         sp|Q… TRUE           111774.
-## 10     9     9 sp|Q8VHX6-… N/A   N/A         sp|Q… TRUE             5144.
-## # ... with 836 more rows, and 29 more variables: `Coltura organotipica
-## #   TOPO_KC_DMEM_1ug_31072018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_DMEM_1ug_31072018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_HFD_1ug_31072018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_HFD_1ug_31072018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_HFD_1ug_31072018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_LFD_1ug_31072018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_LFD_1ug_31072018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_LFD_1ug_31072018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_MW_1ug_30072018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_MW_1ug_30072018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_MW_1ug_30072018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_ObOb_2ug_02082018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_ObOb_2ug_02082018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KC_ObOb_2ug_02082018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_DMEM_2ug_02082018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_DMEM_2ug_02082018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_DMEM_2ug_02082018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_HFD_1ug_01082018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_HFD_1ug_01082018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_HFD_1ug_01082018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_LFD_2ug_02082018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_LFD_2ug_02082018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_LFD_2ug_02082018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_MW_1ug_30072018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_MW_1ug_30072018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_MW_1ug_30072018_SWATH3` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_ObOb_2ug_02082018_SWATH1` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_ObOb_2ug_02082018_SWATH2` &lt;dbl&gt;, `Coltura organotipica
-## #   TOPO_KPC_ObOb_2ug_02082018_SWATH3` &lt;dbl&gt;</code></pre>
+<p>For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample</p>
+<pre><code>## # A tibble: 846 x 5
+##    `Peak Name` KC_DMEM_1ug_310… KC_DMEM_1ug_310… KC_DMEM_1ug_310…
+##    &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1 &lt;NA&gt;                      5                5                5 
+##  2 sp|P19137|…           92493.          102059.           94617.
+##  3 sp|P02469|…          101139.           91133.           90096.
+##  4 sp|Q80X90|…          104487.          126150.          113360.
+##  5 sp|P02468|…          133946.          219006.          150345.
+##  6 sp|P60710|…          479363.          534342.          406184.
+##  7 sp|P52480|…          372423.          291951.          381723.
+##  8 sp|P16858|…          646268.          674944.          722149.
+##  9 sp|Q8BTM8|…          111774.          104019.           83382.
+## 10 sp|Q8VHX6-…            5144.            2002.            4573.
+## # ... with 836 more rows, and 1 more variable: KC_HFD_1ug_31072018_2 &lt;dbl&gt;</code></pre>
 </div>
 
     </div>
