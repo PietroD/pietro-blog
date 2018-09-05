@@ -28,7 +28,7 @@ For example
 x <- read_xlsx('QQ colture dati aggiuntivi 28082018.xlsx')
 ```
 
-```{r, include=FALSE, error=FALSE, warning=FALSE}
+```{r, include=TRUE, error=FALSE, warning=FALSE}
 x
 ```
 

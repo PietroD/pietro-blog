@@ -48,7 +48,7 @@ Apart from the romanticisms, I like life sciences and as a PhD candidate in Biot
       <description>Principal Component Analysis with various data - tidyverse way In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 For example
- </description>
+x ## # A tibble: 846 x 37 ## Row Index `Peak Name` `m/z` `Ret. Time` Group Use `Coltura organo… ## &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; ## 1 NA NA &amp;lt;NA&amp;gt; &amp;lt;NA&amp;gt; &amp;lt;NA&amp;gt; &amp;lt;NA&amp;gt; Group 5 ## 2 1 1 sp|P19137|… N/A N/A Lami… TRUE 92493.</description>
     </item>
     
     <item>
