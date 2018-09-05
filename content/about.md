@@ -1,6 +1,12 @@
 ---
 title: "About"
-date: "2016-05-05T21:48:51-07:00"
+date: "2018-09-05"
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+Hello, I am a PhD candidate in Biotechnology at the University of Verona. Officially. But I prefer to consider myself as a newbie in everything. This means that I am very curious and I love to learn and discover new things.
+
+Apart from the romanticisms, I like life sciences and as a PhD candidate in Biotechnology (plant genetics) my project aims at the identification of the genes involved in the regulation of flowering and veraison in grapevine. Veraison is that stage of berry development where the berries start to become soft and change color (from green to white/red).
+
+The approaches I am following are mainly in silico; that means that I work most of the time at my laptop with genomic sequences, genetic polymorphisms and phenotypic data. For the specialists, this is a genetic association study (i.e. Genome-Wide Association Study GWAS, or Candidate-Gene Association Study). Some they consider me Bioinformatician, I prefer the term Computational biologist, since I trained as a biotechnologist and I had not informatic competences more or less two years before now.
+
+Recently I fall in love with data and ways to manipulate them. Since then I became interested in that wonderful world related to R, which is my daily working “language”.

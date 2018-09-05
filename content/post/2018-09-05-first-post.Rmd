@@ -1,12 +1,12 @@
 ---
-title: First post
-author: Pietro Delfino
+title: "First post"
+author: "Pietro Delfino"
 date: '2018-09-05'
-slug: first-post
-categories:
-  - R
 tags:
-  - R Markdown
+- R Markdown
+- plot
+- regression
+categories: R
 ---
 
-Trying publish content as post
+This is my new website where I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples 
