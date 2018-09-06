@@ -74,6 +74,5 @@ x %>%
     theme_bw()
 ```
 
-{{ template "_internal/disqus.html" . }}
 
 
