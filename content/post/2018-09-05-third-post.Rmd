@@ -1,5 +1,5 @@
 ---
-title: "Principal component analysis with any kind of data in R"
+title: "Principal component analysis - the tidyverse way"
 author: "Pietro Delfino"
 date: '2018-09-05'
 tags:
@@ -17,7 +17,7 @@ library(readxl)
 library(skimr)
 ```
 
-# The tidyverse way
+# PCA with any kind of data
 
 In my daily work I am often asked to perform [**Principal Component Analysis**](https://en.wikipedia.org/wiki/Principal_component_analysis) of various type of *-omics* data, for example data coming from RNA-Seq.
 
@@ -58,6 +58,20 @@ We can see that the values that I'd need for the PCA are in columns of the doubl
 
 ```{r}
 skim(x[8:length(names(x))])
+```
+
+With the `skimr` command I see that all the variables are complete, so there are no missing values, which is good for PCA, that usually does not like `NA`'s.
+
+Why not doing also a boxplot?
+
+```{r, dev='svg'}
+x %>% 
+    select(matches('ug')) %>%
+    rownames_to_column %>%
+    gather(variable, value, -rowname) %>%
+    ggplot(aes(variable, log2(value + 1))) + geom_boxplot() +
+    coord_flip() +
+    theme_bw()
 ```
 
 
