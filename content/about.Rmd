@@ -3,7 +3,8 @@ title: "About"
 date: "2018-09-05"
 ---
 
-Hello, 
+Hello,
+
 I am a PhD candidate in Biotechnology at the University of Verona. Officially. But I prefer to consider myself as a newbie in everything. This means that I am very curious and I love to learn and discover new things.
 
 Apart from the romanticisms, I like life sciences and as a PhD candidate in Biotechnology (plant genetics) my project aims at [**the identification of the genes involved in the regulation of flowering and veraison in grapevine**](/./about_files/Delfino_Poster_SIGA_2017.pdf). Veraison is that stage of berry development where the berries start to become soft and change color (from green to white/red).
