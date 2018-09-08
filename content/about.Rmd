@@ -3,7 +3,8 @@ title: "About"
 date: "2018-09-05"
 ---
 
-Hello, I am a PhD candidate in Biotechnology at the University of Verona. Officially. But I prefer to consider myself as a newbie in everything. This means that I am very curious and I love to learn and discover new things.
+Hello, 
+I am a PhD candidate in Biotechnology at the University of Verona. Officially. But I prefer to consider myself as a newbie in everything. This means that I am very curious and I love to learn and discover new things.
 
 Apart from the romanticisms, I like life sciences and as a PhD candidate in Biotechnology (plant genetics) my project aims at [**the identification of the genes involved in the regulation of flowering and veraison in grapevine**](/./about_files/Delfino_Poster_SIGA_2017.pdf). Veraison is that stage of berry development where the berries start to become soft and change color (from green to white/red).
 
@@ -11,7 +12,7 @@ The approaches I am following are mainly *in silico*; that means that I work mos
 
 Recently I fall in love with data and ways to manipulate them. Since then I became interested in that wonderful world related to [**R**](https://www.r-project.org/), which is my daily working “language”.
 
-![Veraison is cool!](/./about_files/IMG_20160809_102812137_HDR.jpg)
+![I like mountains!](/./about_files/IMG_20170116_145740204_HDR.jpg)
 
 
 

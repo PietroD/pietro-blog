@@ -71,7 +71,7 @@
     
 
     <div class="article-content">
-      <p>Since I googled it about thousands of times, I post it here to help me stick it into my mind.</p>
+      <p>Since I googled this thousands of times, I post it here to help me stick it into my mind.</p>
 <p>To completely remove the legend from a <code>ggplot2</code> graph, use this:</p>
 <p><code>theme(legend.position = 'none')</code></p>
 <p>If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.</p>
@@ -87,7 +87,9 @@ iris %&gt;%
     geom_boxplot() +
     theme(legend.position = &#39;none&#39;)</code></pre>
 <p><img src="/post/2018-09-08-fourth-post_files/figure-html/unnamed-chunk-1-2.svg" width="672" /></p>
-<pre class="r"><code># if you use a different theme, place `theme(legend.position = &#39;none&#39;)` after the selected theme
+<pre class="r"><code># if you use a different theme, place 
+# theme(legend.position = &#39;none&#39;)
+# after the selected theme
 iris %&gt;%
     ggplot(aes(Species, Sepal.Length, col = Species)) + 
     geom_boxplot() +

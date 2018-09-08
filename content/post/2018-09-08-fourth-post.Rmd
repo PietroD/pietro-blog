@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-Since I googled it about thousands of times, I post it here to help me stick it into my mind.
+Since I googled this thousands of times, I post it here to help me stick it into my mind.
 
 To completely remove the legend from a `ggplot2` graph, use this:
 
@@ -32,7 +32,9 @@ iris %>%
     geom_boxplot() +
     theme(legend.position = 'none')
 
-# if you use a different theme, place `theme(legend.position = 'none')` after the selected theme
+# if you use a different theme, place 
+# theme(legend.position = 'none')
+# after the selected theme
 iris %>%
     ggplot(aes(Species, Sepal.Length, col = Species)) + 
     geom_boxplot() +
