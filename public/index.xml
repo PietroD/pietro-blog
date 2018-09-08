@@ -6,10 +6,23 @@
     <description>Recent content on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 08 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Remove legend from ggplot2 plot</title>
+      <link>/2018/09/08/remove-legend-from-ggplot2-plot/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/08/remove-legend-from-ggplot2-plot/</guid>
+      <description>Since I googled it about thousands of times, I post it here to help me stick it into my mind.
+To completely remove the legend from a ggplot2 graph, use this:
+theme(legend.position = &#39;none&#39;)
+If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.
+library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Species)) + geom_boxplot() # remove legend iris %&amp;gt;% ggplot(aes(Species, Sepal.</description>
+    </item>
     
     <item>
       <title>About</title>
