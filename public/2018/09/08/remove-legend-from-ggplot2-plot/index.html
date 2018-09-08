@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Remove legend from ggplot2 plot - Pietro&#39;s website</title>
+<meta property="og:title" content="Remove legend from ggplot2 plot - Pietro&#39;s website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/logo.png"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/cv/">CV</a></li>
+    
+    <li><a href="https://github.com/pietrod">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Remove legend from ggplot2 plot</h1>
+
+    
+    <span class="article-date">2018/09/08</span>
+    
+
+    <div class="article-content">
+      <p>Since I googled it about thousands of times, I post it here to help me stick it into my mind.</p>
+<p>To completely remove the legend from a <code>ggplot2</code> graph, use this:</p>
+<p><code>theme(legend.position = 'none')</code></p>
+<p>If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.</p>
+<pre class="r"><code>library(tidyverse)
+
+iris %&gt;%
+    ggplot(aes(Species, Sepal.Length, col = Species)) + 
+    geom_boxplot()</code></pre>
+<p><img src="/post/2018-09-08-fourth-post_files/figure-html/unnamed-chunk-1-1.svg" width="672" /></p>
+<pre class="r"><code># remove legend
+iris %&gt;%
+    ggplot(aes(Species, Sepal.Length, col = Species)) + 
+    geom_boxplot() +
+    theme(legend.position = &#39;none&#39;)</code></pre>
+<p><img src="/post/2018-09-08-fourth-post_files/figure-html/unnamed-chunk-1-2.svg" width="672" /></p>
+<pre class="r"><code># if you use a different theme, place `theme(legend.position = &#39;none&#39;)` after the selected theme
+iris %&gt;%
+    ggplot(aes(Species, Sepal.Length, col = Species)) + 
+    geom_boxplot() +
+    theme_bw() +
+    theme(legend.position = &#39;none&#39;)</code></pre>
+<p><img src="/post/2018-09-08-fourth-post_files/figure-html/unnamed-chunk-1-3.svg" width="672" /></p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://pietrod.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+
