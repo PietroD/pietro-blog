@@ -1,103 +1,306 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.48" />
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>R Coding</title>
+  <meta property="og:title" content="R Coding" />
+  <meta name="twitter:title" content="R Coding" />
+  <meta name="author" content=""/>
+  <meta property="og:image" content="" />
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="/tags/r-coding/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Pietro&#39;s website" />
+
+  <meta name="generator" content="Hugo 0.48" />
+  <link rel="canonical" href="/tags/r-coding/" />
+  <link rel="alternate" href="/tags/r-coding/index.xml" type="application/rss+xml" title="Pietro&#39;s website">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" />
 
 
-<title>R Coding - Pietro&#39;s website</title>
-<meta property="og:title" content="R Coding - Pietro&#39;s website">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
 
 
 
-  
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+<div class="pswp__bg"></div>
 
-
-
-
-<link href="/tags/r-coding/index.xml" rel="alternate" type="application/rss+xml" title="Pietro&#39;s website" />
-
-
-
-<link rel="stylesheet" href="/css/fonts.css" media="all">
-<link rel="stylesheet" href="/css/main.css" media="all">
-
-
-
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="/" class="nav-logo">
-    <img src="/images/pietro3.png"
-         width="500"
-         height="500"
-         alt="Logo">
-  </a>
-
-  <ul class="nav-links">
+<div class="pswp__scroll-wrap">
     
-    <li><a href="/about/">About</a></li>
-    
-    <li><a href="/cv/">CV</a></li>
-    
-    <li><a href="https://github.com/pietrod">GitHub</a></li>
-    
-    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
-    
-  </ul>
-</nav>
-
-      </header>
-
-
-<main class="content" role="main">
-
-  
-  <div class="archive">
-    
-    <h2 class="archive-title">2018</h2>
-    
-    <article class="archive-item">
-      <a href="/2018/09/08/remove-legend-from-ggplot2-plot/" class="archive-item-link">Remove legend from ggplot2 plot</a>
-      <span class="archive-item-date">
-        2018/09/08
-      </span>
-    </article>
-    
-    <article class="archive-item">
-      <a href="/2018/09/05/principal-component-analysis---the-tidyverse-way/" class="archive-item-link">Principal component analysis - the tidyverse way</a>
-      <span class="archive-item-date">
-        2018/09/05
-      </span>
-    </article>
-    
-    
-  </div>
-  
-
-</main>
-
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
-          </li>
-          <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
-          </li>
-        </ul>
-      </footer>
-
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
     </div>
     
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Pietro&#39;s website</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="CV" href="/cv/">CV</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/pietrod">GitHub</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/Pietro_Delfino">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Pietro&#39;s website" href="/">
+            <img class="avatar-img" src="" alt="Pietro&#39;s website" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
 
     
+  <header class="header-section ">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="page-heading">
+              <h1>#R Coding</h1>
+              <hr class="small">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
     
+  <div class="container" role="main">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        
+        <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="/2018/09/08/remove-legend-from-ggplot2-plot/">
+                <h2 class="post-title">Remove legend from ggplot2 plot</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 8, 2018
+  
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  Since I googled this thousands of times, I post it here to help me stick it into my mind.
+To completely remove the legend from a ggplot2 graph, use this:
+theme(legend.position = 'none')
+If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.
+library(tidyverse) iris %&gt;% ggplot(aes(Species, Sepal.Length, col = Species)) + geom_boxplot() # remove legend iris %&gt;% ggplot(aes(Species, Sepal.
+                  <a href="/2018/09/08/remove-legend-from-ggplot2-plot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/r-coding/">R coding</a>&nbsp;
+                  
+                    <a href="//tags/ggplot/">ggplot</a>&nbsp;
+                  
+                    <a href="//tags/statistics/">statistics</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="/2018/09/05/principal-component-analysis---the-tidyverse-way/">
+                <h2 class="post-title">Principal component analysis - the tidyverse way</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on September 5, 2018
+  
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:
+                  <a href="/2018/09/05/principal-component-analysis---the-tidyverse-way/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <div class="blog-tags">
+                  
+                    <a href="//tags/r-coding/">R coding</a>&nbsp;
+                  
+                    <a href="//tags/statistics/">statistics</a>&nbsp;
+                  
+                    <a href="//tags/pca/">PCA</a>&nbsp;
+                  
+                    <a href="//tags/tidyverse/">tidyverse</a>&nbsp;
+                  
+                </div>
+              
+
+            </article>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">Pietro&#39;s website</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.48</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
   </body>
 </html>
 
