@@ -1,103 +1,42 @@
 baseurl = "/"
-DefaultContentLanguage = "en"
+languageCode = "en-us"
 title = "Pietro's website"
-theme = "beautifulhugo"
-metaDataFormat = "yaml"
-pygmentsStyle = "trac"
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-#pygmentsUseClassic = true
-#pygmentOptions = "linenos=inline"
+theme = "hugo-lithium"
+googleAnalytics = ""
 disqusShortname = "pietrod"
-#googleAnalytics = "XXX"
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-[Params]
-  homeTitle = "Pietro's" # Set a different text for the header on the home page
-  #subtitle = "Build a beautiful and simple website in minutes"
-  logo = "pietro3.png"
-  #favicon = "img/favicon.ico"
-  dateFormat = "January 2, 2006"
-  commit = false
-  rss = true
-  comments = true
-  readingTime = true
-  useHLJS = false
-  socialShare = true
-#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
-
-#[[Params.bigimg]]
-#  src = "img/triangle.jpg"
-#  desc = "Triangle"
-#[[Params.bigimg]]
-#  src = "img/sphere.jpg"
-#  desc = "Sphere"
-#  # position: see values of CSS background-position.
-#  position = "center top"
-#[[Params.bigimg]]
-#  src = "img/hexagon.jpg"
-#  desc = "Hexagon"
-
-[Author]
-  name = "Pietro Delfino"
-  website = "pietrod.rbind.io"
-  email = "youremail@domain.com"
-  #facebook = "username"
-  #googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  github = "pietrod"
-  #gitlab = "username"
-  #bitbucket = "username"
-  twitter = "username"
-  #reddit = "username"
-  #linkedin = "username"
-  #xing = "username"
-  #stackoverflow = "users/XXXXXXX/username"
-  #snapchat = "username"
-  #instagram = "username"
-  #youtube = "user/username" # or channel/channelname
-  #soundcloud = "username"
-  #spotify = "username"
-  #bandcamp = "username"
-  #itchio = "username"
-  #vk = "username"
-  #paypal = "username"
-  #telegram = "username"
-
-[[menu.main]]
-    name = "Blog"
-    url = ""
-    weight = 1
+[permalinks]
+    post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 3
-
 [[menu.main]]
-    identifier = "samples"
-    name = "Samples"
-    weight = 2
-
+    name = "CV"
+    url = "/cv/"
 [[menu.main]]
-    parent = ""
-    name = ""
-    url = ""
-    weight = 1
-
+    name = "GitHub"
+    url = "https://github.com/pietrod"
 [[menu.main]]
-    parent = ""
-    name = ""
-    url = ""
-    weight = 2
+    name = "Twitter"
+    url = "https://twitter.com/Pietro_Delfino"
 
-[[menu.main]]
-    parent = ""
-    name = ""
-    url = ""
-    weight = 3
+[params]
+    description = "A website built through Hugo and blogdown."
 
-[[menu.main]]
-    name = "Tags"
-    url = "tags"
-    weight = 3
+    # options for highlight.js (version, additional languages, and theme)
+    highlightjsVersion = "9.11.0"
+    highlightjsCDN = "//cdn.bootcss.com"
+    highlightjsLang = ["r", "yaml"]
+    highlightjsTheme = "github"
+
+    MathJaxCDN = "//cdn.bootcss.com"
+    MathJaxVersion = "2.7.1"
+
+    [params.logo]
+    url = "pietro3.png"
+    width = 500
+    height = 500
+    alt = "Logo"
+
