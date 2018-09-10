@@ -5,8 +5,7 @@
     <link>/tags/regression/</link>
     <description>Recent content in Regression on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>youremail@domain.com (Pietro Delfino)</managingEditor>
-    <webMaster>youremail@domain.com (Pietro Delfino)</webMaster>
+    <language>en-us</language>
     <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/regression/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +13,10 @@
     
     <item>
       <title>First post</title>
-      <link>/post/2018-09-05-first-post/</link>
+      <link>/2018/09/05/first-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      <author>youremail@domain.com (Pietro Delfino)</author>
-      <guid>/post/2018-09-05-first-post/</guid>
+      
+      <guid>/2018/09/05/first-post/</guid>
       <description>This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples</description>
     </item>
     
