@@ -1,0 +1,78 @@
+---
+title: "Principal component analysis - the tidyverse way"
+author: "Pietro Delfino"
+date: '2018-09-05'
+tags:
+- R coding
+- statistics
+- PCA
+- tidyverse
+categories: R, github, stats, tidyverse, PCA
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(skimr)
+```
+
+# PCA with any kind of data
+
+In my daily work I am often asked to perform [**Principal Component Analysis**](https://en.wikipedia.org/wiki/Principal_component_analysis) of various type of *-omics* data, for example data coming from RNA-Seq.
+
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:
+
+```{r, include=FALSE, error=FALSE, warning=FALSE}
+x <- read_xlsx('QQ colture dati aggiuntivi 28082018.xlsx')
+
+x <- 
+    x %>%
+    filter(!is.na(Row))
+
+names(x) <- gsub('Coltura organotipica ', '', names(x))
+names(x) <- gsub('TOPO_', '', names(x))
+names(x) <- gsub('SWATH', '', names(x))
+```
+
+```{r echo=FALSE, error=FALSE, warning=FALSE}
+x %>% 
+    select(`Peak Name`, 8:11)
+```
+
+I recently started the transition to the [**tidyverse**](https://www.tidyverse.org/) approach of data science into R, after having learnt R the classic way a couple of years ago.
+
+Also for performig PCA I came up with a tidyverse script that goes from a dataframe (a tibble) like the one above and the output of a PCA in a couple of steps.
+
+Before going to the PCA step I want to show how I usually proceed with exploratory analysis on a tibble like this.
+
+First thing I usually do is a `glimpse` of the tibble that gives me an overview of all the variables in my df.
+
+```{r}
+glimpse(x)
+```
+
+We can see that the values that I'd need for the PCA are in columns of the double type, but we also have two columns, `Row` and `Index` which are of the same double type. Keep this in mind for later. For computing PCA I only need the columns with the mass spec intensities values, then I want to focus on those columns, using another wonderful command from the `skimr` package.
+
+```{r}
+skim(x[8:length(names(x))])
+```
+
+With the `skimr` command I see that all the variables are complete, so there are no missing values, which is good for PCA, that usually does not like `NA`'s.
+
+Why not doing also a boxplot?
+
+```{r, dev='svg'}
+x %>% 
+    select(matches('ug')) %>%
+    rownames_to_column %>%
+    gather(variable, value, -rowname) %>%
+    ggplot(aes(variable, log2(value + 1))) + geom_boxplot() +
+    coord_flip() +
+    theme_bw()
+```
+
+
+

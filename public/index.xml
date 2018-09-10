@@ -5,7 +5,8 @@
     <link>/</link>
     <description>Recent content on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Pietro Delfino)</managingEditor>
+    <webMaster>youremail@domain.com (Pietro Delfino)</webMaster>
     <lastBuildDate>Sat, 08 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Remove legend from ggplot2 plot</title>
-      <link>/2018/09/08/remove-legend-from-ggplot2-plot/</link>
+      <link>/post/2018-09-08-fourth-post/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/08/remove-legend-from-ggplot2-plot/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-08-fourth-post/</guid>
       <description>Since I googled this thousands of times, I post it here to help me stick it into my mind.
 To completely remove the legend from a ggplot2 graph, use this:
 theme(legend.position = &#39;none&#39;)
@@ -28,7 +29,7 @@ library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Speci
       <title>About</title>
       <link>/about/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/about/</guid>
       <description>Hello,
 I am a PhD candidate in Biotechnology at the University of Verona. Officially. But I prefer to consider myself as a newbie in everything. This means that I am very curious and I love to learn and discover new things.
@@ -37,28 +38,28 @@ Apart from the romanticisms, I like life sciences and as a PhD candidate in Biot
     
     <item>
       <title>First post</title>
-      <link>/2018/09/05/first-post/</link>
+      <link>/post/2018-09-05-first-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/first-post/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-first-post/</guid>
       <description>This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples</description>
     </item>
     
     <item>
       <title>How to create a website using blogdown, RMarkdown, Github and Netlify</title>
-      <link>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</link>
+      <link>/post/2018-09-05-second-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-second-post/</guid>
       <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://youtu.be/syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
     </item>
     
     <item>
       <title>Principal component analysis - the tidyverse way</title>
-      <link>/2018/09/05/principal-component-analysis---the-tidyverse-way/</link>
+      <link>/post/2018-09-05-third-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/principal-component-analysis---the-tidyverse-way/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-third-post/</guid>
       <description>PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>
@@ -68,7 +69,7 @@ For example something like this, where I have mouse proteins in rows and mass sp
       <title>Curriculum vitae</title>
       <link>/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/cv/</guid>
       <description>Department of Biotechnology, University of Verona
 Strada Le Grazie 15, Verona

@@ -5,7 +5,8 @@
     <link>/categories/</link>
     <description>Recent content in Categories on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Pietro Delfino)</managingEditor>
+    <webMaster>youremail@domain.com (Pietro Delfino)</webMaster>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +15,7 @@
       <title>Ggplot</title>
       <link>/categories/ggplot/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/categories/ggplot/</guid>
       <description></description>
     </item>
@@ -23,7 +24,7 @@
       <title>R</title>
       <link>/categories/r/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/categories/r/</guid>
       <description></description>
     </item>
@@ -32,7 +33,7 @@
       <title>R Blogdown Github</title>
       <link>/categories/r-blogdown-github/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/categories/r-blogdown-github/</guid>
       <description></description>
     </item>
@@ -41,7 +42,7 @@
       <title>R Github Stats Tidyverse Pca</title>
       <link>/categories/r-github-stats-tidyverse-pca/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/categories/r-github-stats-tidyverse-pca/</guid>
       <description></description>
     </item>
@@ -50,7 +51,7 @@
       <title>Stats</title>
       <link>/categories/stats/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
+      <author>youremail@domain.com (Pietro Delfino)</author>
       <guid>/categories/stats/</guid>
       <description></description>
     </item>
