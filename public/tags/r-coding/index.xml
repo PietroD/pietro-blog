@@ -5,7 +5,8 @@
     <link>/tags/r-coding/</link>
     <description>Recent content in R Coding on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Pietro Delfino)</managingEditor>
+    <webMaster>youremail@domain.com (Pietro Delfino)</webMaster>
     <lastBuildDate>Sat, 08 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r-coding/index.xml" rel="self" type="application/rss+xml" />
@@ -13,10 +14,10 @@
     
     <item>
       <title>Remove legend from ggplot2 plot</title>
-      <link>/2018/09/08/remove-legend-from-ggplot2-plot/</link>
+      <link>/post/2018-09-08-fourth-post/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/08/remove-legend-from-ggplot2-plot/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-08-fourth-post/</guid>
       <description>Since I googled this thousands of times, I post it here to help me stick it into my mind.
 To completely remove the legend from a ggplot2 graph, use this:
 theme(legend.position = &#39;none&#39;)
@@ -26,10 +27,10 @@ library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Speci
     
     <item>
       <title>Principal component analysis - the tidyverse way</title>
-      <link>/2018/09/05/principal-component-analysis---the-tidyverse-way/</link>
+      <link>/post/2018-09-05-third-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/principal-component-analysis---the-tidyverse-way/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-third-post/</guid>
       <description>PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>

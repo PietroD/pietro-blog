@@ -5,7 +5,8 @@
     <link>/tags/r-markdown/</link>
     <description>Recent content in R Markdown on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <managingEditor>youremail@domain.com (Pietro Delfino)</managingEditor>
+    <webMaster>youremail@domain.com (Pietro Delfino)</webMaster>
     <lastBuildDate>Wed, 05 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
@@ -13,19 +14,19 @@
     
     <item>
       <title>First post</title>
-      <link>/2018/09/05/first-post/</link>
+      <link>/post/2018-09-05-first-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/first-post/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-first-post/</guid>
       <description>This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples</description>
     </item>
     
     <item>
       <title>How to create a website using blogdown, RMarkdown, Github and Netlify</title>
-      <link>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</link>
+      <link>/post/2018-09-05-second-post/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</guid>
+      <author>youremail@domain.com (Pietro Delfino)</author>
+      <guid>/post/2018-09-05-second-post/</guid>
       <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://youtu.be/syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
     </item>
     
