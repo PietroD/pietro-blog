@@ -13,7 +13,7 @@ The approaches I am following are mainly *in silico*; that means that I work mos
 
 Recently I fall in love with data and ways to manipulate them. Since then I became interested in that wonderful world related to [**R**](https://www.r-project.org/), which is my daily working “language”.
 
-![I like mountains!](/./about_files/IMG_20170116_145740204_HDR.jpg)
+![I also like mountains!](/./about_files/IMG_20170116_145740204_HDR.jpg)
 
 
 
