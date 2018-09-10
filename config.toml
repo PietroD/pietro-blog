@@ -1,6 +1,5 @@
 baseurl = "/"
 DefaultContentLanguage = "en"
-#DefaultContentLanguage = "ja"
 title = "Pietro's website"
 theme = "beautifulhugo"
 metaDataFormat = "yaml"
@@ -17,8 +16,8 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 [Params]
   homeTitle = "Pietro's" # Set a different text for the header on the home page
   #subtitle = "Build a beautiful and simple website in minutes"
-  logo = "img/avatar-icon.png"
-  favicon = "img/favicon.ico"
+  logo = "pietro3.png"
+  #favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
@@ -44,26 +43,26 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
   name = "Pietro Delfino"
   website = "pietrod.rbind.io"
   email = "youremail@domain.com"
-  facebook = "username"
-  googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
+  #facebook = "username"
+  #googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
   github = "pietrod"
-  gitlab = "username"
-  bitbucket = "username"
+  #gitlab = "username"
+  #bitbucket = "username"
   twitter = "username"
-  reddit = "username"
-  linkedin = "username"
-  xing = "username"
-  stackoverflow = "users/XXXXXXX/username"
-  snapchat = "username"
-  instagram = "username"
-  youtube = "user/username" # or channel/channelname
-  soundcloud = "username"
-  spotify = "username"
-  bandcamp = "username"
-  itchio = "username"
-  vk = "username"
-  paypal = "username"
-  telegram = "username"
+  #reddit = "username"
+  #linkedin = "username"
+  #xing = "username"
+  #stackoverflow = "users/XXXXXXX/username"
+  #snapchat = "username"
+  #instagram = "username"
+  #youtube = "user/username" # or channel/channelname
+  #soundcloud = "username"
+  #spotify = "username"
+  #bandcamp = "username"
+  #itchio = "username"
+  #vk = "username"
+  #paypal = "username"
+  #telegram = "username"
 
 [[menu.main]]
     name = "Blog"
@@ -72,7 +71,7 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [[menu.main]]
     name = "About"
-    url = "page/about/"
+    url = "/about/"
     weight = 3
 
 [[menu.main]]
@@ -81,21 +80,21 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 2
 
 [[menu.main]]
-    parent = "samples"
-    name = "Big Image Sample"
-    url = "post/2017-03-07-bigimg-sample"
+    parent = ""
+    name = ""
+    url = ""
     weight = 1
 
 [[menu.main]]
-    parent = "samples"
-    name = "Math Sample"
-    url = "post/2017-03-05-math-sample"
+    parent = ""
+    name = ""
+    url = ""
     weight = 2
 
 [[menu.main]]
-    parent = "samples"
-    name = "Code Sample"
-    url = "post/2016-03-08-code-sample"
+    parent = ""
+    name = ""
+    url = ""
     weight = 3
 
 [[menu.main]]
