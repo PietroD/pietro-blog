@@ -77,18 +77,18 @@
 <p>With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.</p>
 <p>For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</p>
 <pre><code>## # A tibble: 845 x 5
-##    `Peak Name` KC_DMEM_1ug_310… KC_DMEM_1ug_310… KC_DMEM_1ug_310…
-##    &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
-##  1 sp|P19137|…           92493.          102059.           94617.
-##  2 sp|P02469|…          101139.           91133.           90096.
-##  3 sp|Q80X90|…          104487.          126150.          113360.
-##  4 sp|P02468|…          133946.          219006.          150345.
-##  5 sp|P60710|…          479363.          534342.          406184.
-##  6 sp|P52480|…          372423.          291951.          381723.
-##  7 sp|P16858|…          646268.          674944.          722149.
-##  8 sp|Q8BTM8|…          111774.          104019.           83382.
-##  9 sp|Q8VHX6-…            5144.            2002.            4573.
-## 10 sp|Q68FD5|…           40380.           63811.           40825.
+##    `Peak Name`     KC_DMEM_1ug_31072… KC_DMEM_1ug_31072… KC_DMEM_1ug_3107…
+##    &lt;chr&gt;                        &lt;dbl&gt;              &lt;dbl&gt;             &lt;dbl&gt;
+##  1 sp|P19137|LAMA…             92493.            102059.            94617.
+##  2 sp|P02469|LAMB…            101139.             91133.            90096.
+##  3 sp|Q80X90|FLNB…            104487.            126150.           113360.
+##  4 sp|P02468|LAMC…            133946.            219006.           150345.
+##  5 sp|P60710|ACTB…            479363.            534342.           406184.
+##  6 sp|P52480|KPYM…            372423.            291951.           381723.
+##  7 sp|P16858|G3P_…            646268.            674944.           722149.
+##  8 sp|Q8BTM8|FLNA…            111774.            104019.            83382.
+##  9 sp|Q8VHX6-2|FL…              5144.              2002.             4573.
+## 10 sp|Q68FD5|CLH1…             40380.             63811.            40825.
 ## # ... with 835 more rows, and 1 more variable: KC_HFD_1ug_31072018_2 &lt;dbl&gt;</code></pre>
 <p>I recently started the transition to the <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> approach of data science into R, after having learnt R the classic way a couple of years ago.</p>
 <p>Also for performig PCA I came up with a tidyverse script that goes from a dataframe (a tibble) like the one above and the output of a PCA in a couple of steps.</p>
