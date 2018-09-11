@@ -22,7 +22,7 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
@@ -47,11 +47,29 @@
     </item>
     
     <item>
+      <title>R Studio</title>
+      <link>/categories/r-studio/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-studio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Stats</title>
       <link>/categories/stats/</link>
       <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/stats/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Admin</title>
+      <link>/categories/system-admin/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/system-admin/</guid>
       <description></description>
     </item>
     
