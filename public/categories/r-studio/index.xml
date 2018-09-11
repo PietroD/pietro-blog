@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R Studio on Pietro&#39;s website</title>
+    <link>/categories/r-studio/</link>
+    <description>Recent content in R Studio on Pietro&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/r-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Update R version RStudio server open</title>
+      <link>/2018/09/11/update-r-version-rstudio-server-open/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/11/update-r-version-rstudio-server-open/</guid>
+      <description>At work I mostly use R through RStudio server installed on an Ubuntu 14.04.5 LTS machine 64-bit.
+The current version of R supported by Ubuntu repositories is version 3.4.4, that I installed with sudo apt-get install r-base and on my machine is installed under the /usr/bin/R path.
+From what I got reading on the web, RStudio server open starts up automatically recognizing this R installation. Since I wanted to update it to the latest release, at the time of writing version 3.</description>
+    </item>
+    
+  </channel>
+</rss>

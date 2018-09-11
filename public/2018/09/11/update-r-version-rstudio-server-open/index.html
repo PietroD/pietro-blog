@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.48" />
+
+
+<title>Update R version RStudio server open - Pietro&#39;s website</title>
+<meta property="og:title" content="Update R version RStudio server open - Pietro&#39;s website">
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/pietro3.png"
+         width="500"
+         height="500"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="/cv/">CV</a></li>
+    
+    <li><a href="https://github.com/pietrod">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">Update R version RStudio server open</h1>
+
+    
+    <span class="article-date">2018/09/11</span>
+    
+
+    <div class="article-content">
+      <p>At work I mostly use <code>R</code> through RStudio server installed on an Ubuntu 14.04.5 LTS machine 64-bit.</p>
+<p>The current version of <code>R</code> supported by Ubuntu repositories is version 3.4.4, that I installed with <code>sudo apt-get install r-base</code> and on my machine is installed under the <code>/usr/bin/R</code> path.</p>
+<p>From what I got reading on the web, RStudio server open starts up automatically recognizing this <code>R</code> installation. Since I wanted to update it to the latest release, at the time of writing version 3.5.1, these are the steps that I followed:</p>
+<ul>
+<li>Downloaded desired version of <code>R</code> source code from <a href="https://cran.r-project.org/src/base/R-3/" class="uri">https://cran.r-project.org/src/base/R-3/</a></li>
+<li>Installed from whatever folder on my Ubuntu machine using the commands:
+<ul>
+<li><code>tar -xzvf R-3.5.1.tar.gz</code></li>
+<li><code>cd R-3.5.1/</code></li>
+<li><code>./configure --enable-R-shlib=yes</code></li>
+<li><code>make</code></li>
+<li><code>sudo make install</code></li>
+</ul></li>
+<li>Check where the newest version is installed with <code>which R</code></li>
+<li>Edited the file <code>/etc/rstudio/rserver.conf</code> with the path of the newest <code>R</code> version just installed; mine was <code>rsession-which-r=/usr/local/bin/R</code></li>
+<li>checked if RStudio server configuration was ok with the command <code>sudo rstudio-server verify-installation</code></li>
+<li>restarted RStudio server with <code>sudo rstudio-server restart</code></li>
+</ul>
+<p>If everything went fine then you should be able to connect to your RStudio server and see the updated <code>R</code> version</p>
+<p>Let me know if it worked for you!</p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://pietrod.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,30 @@
+---
+title: "Update R version RStudio server open"
+author: "Pietro Delfino"
+date: "2018-09-11"
+tags: ["R Studio", "R", "system admin"]
+categories: ["R Studio", "R", "system admin"]
+---
+    
+At work I mostly use `R` through RStudio server installed on an Ubuntu 14.04.5 LTS machine 64-bit.
+
+The current version of `R` supported by Ubuntu repositories is version 3.4.4, that I installed with `sudo apt-get install r-base` and on my machine is installed under the `/usr/bin/R` path.
+
+From what I got reading on the web, RStudio server open starts up automatically recognizing this `R` installation. Since I wanted to update it to the latest release, at the time of writing version 3.5.1, these are the steps that I followed:
+
+- Downloaded desired version of `R` source code from https://cran.r-project.org/src/base/R-3/
+- Installed from whatever folder on my Ubuntu machine using the commands:
+    - `tar -xzvf R-3.5.1.tar.gz`
+    - `cd R-3.5.1/`
+    - `./configure --enable-R-shlib=yes`
+    - `make`
+    - `sudo make install`
+- Check where the newest version is installed with `which R`
+- Edited the file `/etc/rstudio/rserver.conf` with the path of the newest `R` version just installed; mine was `rsession-which-r=/usr/local/bin/R`
+- checked if RStudio server configuration was ok with the command `sudo rstudio-server verify-installation`
+- restarted RStudio server with `sudo rstudio-server restart`
+
+If everything went fine then you should be able to connect to your RStudio server and see the updated `R` version
+
+Let me know if it worked for you!
+    
