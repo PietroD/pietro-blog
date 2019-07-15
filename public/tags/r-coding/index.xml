@@ -19,7 +19,7 @@
       <guid>/2019/07/15/customize-ggplot2-boxplot---make-it-beautiful/</guid>
       <description>I like ggplot2 graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.
 Here I will present some tricks to make beautiful - at least to me - boxplots. I am using the iris dataset, always the best to be reproducible for everyone.
-First we define a function to make firs letter of each word upper case, retrieved from here https://stackoverflow.</description>
+First we define a function to make first letter of each word upper case, retrieved from here https://stackoverflow.</description>
     </item>
     
     <item>

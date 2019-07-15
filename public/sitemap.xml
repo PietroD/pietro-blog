@@ -47,13 +47,13 @@
   </url>
   
   <url>
-    <loc>/tags/ggplot/</loc>
+    <loc>/categories/ggplot/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ggplot/</loc>
+    <loc>/tags/ggplot/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -83,14 +83,14 @@
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
+    <loc>/categories/r/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+    <loc>/tags/r/</loc>
+    <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -125,13 +125,13 @@
   </url>
   
   <url>
-    <loc>/tags/r-studio/</loc>
+    <loc>/categories/r-studio/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/r-studio/</loc>
+    <loc>/tags/r-studio/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -155,13 +155,13 @@
   </url>
   
   <url>
-    <loc>/tags/system-admin/</loc>
+    <loc>/categories/system-admin/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/system-admin/</loc>
+    <loc>/tags/system-admin/</loc>
     <lastmod>2018-09-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
