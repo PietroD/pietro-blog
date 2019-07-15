@@ -1,5 +1,5 @@
 ---
-title: "Customize ggplot2 boxplot - make it beautiful"
+title: "Customize ggplot2 boxplots - make 'em beautiful"
 author: "Pietro Delfino"
 date: '2019-07-15'
 tags:
@@ -36,7 +36,7 @@ I also make use of a nice package that I use almost every time I want different 
 
 Now the plot, then we comment.
 
-```{r message=FALSE, warning=FALSE, dev='svg', }
+```{r message=FALSE, warning=FALSE, dev='svg'}
 library(tidyverse)
 library(reshape2)
 library(ggsci)
