@@ -36,7 +36,7 @@ We also make use of a nice package that I use almost every time I want different
 
 Now the plot, then we comment.
 
-```{r message=FALSE, warning=FALSE, dev='svg'}
+```{r message=FALSE, warning=FALSE, dev='svg', fig.height=2, fig.width=4}
 library(tidyverse)
 library(reshape2)
 library(ggsci)
@@ -72,4 +72,5 @@ iris %>%
     ggsci::scale_fill_npg()
 ```
 
+The main point here is to create an alternate 
 
