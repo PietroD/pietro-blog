@@ -246,7 +246,7 @@ code {
   margin-left: 2px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1000px) {
   .header {
     padding: 25px 0;
   }
@@ -293,7 +293,7 @@ code {
 
   .archive-item-link {
     text-overflow: ellipsis;
-    max-width: calc(120% - 120px);
+    max-width: calc(100% - 120px);
     white-space: nowrap;
     overflow: hidden;
   }
