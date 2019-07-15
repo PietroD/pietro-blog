@@ -77,7 +77,7 @@ iris %>%
 ```
 
 ```{r, echo=FALSE, fig.cap="The same plot saved in pdf", out.width = '100%'}
-knitr::include_graphics('../../static/about_files/prova.pdf')
+knitr::include_graphics('static/about_files/prova.pdf')
 ```
 
 The main point here is to create an alternate background with custom colors that makes the reading of the plot more pleasant.
