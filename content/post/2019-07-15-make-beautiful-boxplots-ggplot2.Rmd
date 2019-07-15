@@ -36,7 +36,7 @@ We also make use of a nice package that I use almost every time I want different
 
 Now the plot, then we comment.
 
-```{r message=FALSE, warning=FALSE, dev='svg', fig.height=2, fig.width=4}
+```{r message=FALSE, warning=FALSE, dev='svg'}
 library(tidyverse)
 library(reshape2)
 library(ggsci)
@@ -72,5 +72,11 @@ iris %>%
     ggsci::scale_fill_npg()
 ```
 
-The main point here is to create an alternate 
+The main point here is to create an alternate background with custome color that makes the reading of the plot more pleasant.
+
+The `ggplot2` function `annotate` is a useful proxy for this behaviour. The trick here is to call again the main plot object (in this case `geom_boxplot`) after the `annotate` function, otherwise it remains covered.
+
+Another interesting custom trick is to use the `scale_y_continuous` function in combination with `expand` to make the axis start from a custom value, in this case from zero; a behaviour that is not default in `ggplot2`.
+
+
 
