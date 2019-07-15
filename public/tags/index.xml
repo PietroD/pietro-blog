@@ -12,16 +12,7 @@
     
     
     <item>
-      <title>R coding</title>
-      <link>/tags/r-coding/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r-coding/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ggplot</title>
+      <title>Ggplot</title>
       <link>/tags/ggplot/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
@@ -30,11 +21,20 @@
     </item>
     
     <item>
-      <title>statistics</title>
-      <link>/tags/statistics/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      <title>Pca</title>
+      <link>/tags/pca/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/statistics/</guid>
+      <guid>/tags/pca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plot</title>
+      <link>/tags/plot/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/plot/</guid>
       <description></description>
     </item>
     
@@ -48,38 +48,20 @@
     </item>
     
     <item>
-      <title>R Studio</title>
-      <link>/tags/r-studio/</link>
-      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r-studio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>system admin</title>
-      <link>/tags/system-admin/</link>
-      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/system-admin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PCA</title>
-      <link>/tags/pca/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/pca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R Blogdown</title>
       <link>/tags/r-blogdown/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/r-blogdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Coding</title>
+      <link>/tags/r-coding/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r-coding/</guid>
       <description></description>
     </item>
     
@@ -93,16 +75,16 @@
     </item>
     
     <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      <title>R Studio</title>
+      <link>/tags/r-studio/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/plot/</guid>
+      <guid>/tags/r-studio/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>regression</title>
+      <title>Regression</title>
       <link>/tags/regression/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -111,7 +93,25 @@
     </item>
     
     <item>
-      <title>tidyverse</title>
+      <title>Statistics</title>
+      <link>/tags/statistics/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Admin</title>
+      <link>/tags/system-admin/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/system-admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tidyverse</title>
       <link>/tags/tidyverse/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
