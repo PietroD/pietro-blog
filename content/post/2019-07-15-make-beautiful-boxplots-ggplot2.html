@@ -60,7 +60,7 @@ iris %&gt;%
           legend.position = &#39;none&#39;) +
     ylab(&#39;Sepal Length&#39;) +
     ggsci::scale_fill_npg()</code></pre>
-<p><img src="/post/2019-07-15-make-beautiful-boxplots-ggplot2_files/figure-html/unnamed-chunk-2-1.svg" width="672" /></p>
+<p><img src="/post/2019-07-15-make-beautiful-boxplots-ggplot2_files/figure-html/unnamed-chunk-2-1.svg" width="120%" /></p>
 <p>The main point here is to create an alternate background with custom colors that makes the reading of the plot more pleasant.</p>
 <p>The <code>ggplot2</code> function <code>annotate</code> is a useful proxy for this behaviour. The trick here is to call again the main plot object (in this case <code>geom_boxplot</code>) after the <code>annotate</code> function, otherwise it remains covered.</p>
 <p>Another interesting custom trick is to use the <code>scale_y_continuous</code> function in combination with <code>expand</code> to make the ticks start and end on a custom value, in this case from 4 and 8; a behaviour that is not default in <code>ggplot2</code>.</p>
