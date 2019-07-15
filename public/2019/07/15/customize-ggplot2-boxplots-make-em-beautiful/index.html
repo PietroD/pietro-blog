@@ -1,17 +1,77 @@
----
-title: "Customize ggplot2 boxplots - make 'em beautiful"
-author: "Pietro Delfino"
-date: '2019-07-15'
-tags:
-- R coding
-- ggplot
-- statistics
-categories:
-- R
-- stats
-- ggplot
----
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.6" />
 
+
+<title>Customize ggplot2 boxplots - make &#39;em beautiful - Pietro&#39;s website</title>
+<meta property="og:title" content="Customize ggplot2 boxplots - make &#39;em beautiful - Pietro&#39;s website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/mainoverwrite.css?v=1">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/pietro3.png"
+         width="500"
+         height="500"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/pietrod">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Customize ggplot2 boxplots - make &#39;em beautiful</h1>
+
+    
+    <span class="article-date">2019/07/15</span>
+    
+
+    <div class="article-content">
+      
 
 
 <p>I like <code>ggplot2</code> graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.</p>
@@ -66,3 +126,68 @@ iris %&gt;%
 <p>Another interesting custom trick is to use the <code>scale_y_continuous</code> function in combination with <code>expand</code> to make the ticks start and end on a custom value, in this case from 4 and 8; a behaviour that is not default in <code>ggplot2</code>.</p>
 <p>All the options within the <code>theme</code> function are modified to remove completely the panel grid and background.</p>
 <p>Now I am working to find a way to automatically set the annotate boxes limits in case of multiples (more than 3), and not known in advance, variables.</p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://pietrod.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-119674869-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
