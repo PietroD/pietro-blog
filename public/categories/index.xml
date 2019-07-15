@@ -6,43 +6,35 @@
     <description>Recent content in Categories on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ggplot</title>
-      <link>/categories/ggplot/</link>
-      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ggplot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R Blogdown Github</title>
-      <link>/categories/r-blogdown-github/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      <title>ggplot</title>
+      <link>/categories/ggplot/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r-blogdown-github/</guid>
+      <guid>/categories/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R Github Stats Tidyverse Pca</title>
-      <link>/categories/r-github-stats-tidyverse-pca/</link>
-      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      <title>stats</title>
+      <link>/categories/stats/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r-github-stats-tidyverse-pca/</guid>
+      <guid>/categories/stats/</guid>
       <description></description>
     </item>
     
@@ -56,20 +48,29 @@
     </item>
     
     <item>
-      <title>Stats</title>
-      <link>/categories/stats/</link>
-      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/stats/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>System Admin</title>
+      <title>system admin</title>
       <link>/categories/system-admin/</link>
       <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/categories/system-admin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R, blogdown, github</title>
+      <link>/categories/r-blogdown-github/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-blogdown-github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R, github, stats, tidyverse, PCA</title>
+      <link>/categories/r-github-stats-tidyverse-pca/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/r-github-stats-tidyverse-pca/</guid>
       <description></description>
     </item>
     

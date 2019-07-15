@@ -1,0 +1,59 @@
+---
+title: "Customize ggplot2 boxplot - make it beautiful"
+author: "Pietro Delfino"
+date: '2019-07-15'
+tags:
+- R coding
+- ggplot
+- statistics
+categories:
+- R
+- stats
+- ggplot
+---
+
+
+
+<p>I like <code>ggplot2</code> graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.</p>
+<p>Here I will present some tricks to make beautiful - at least to me - boxplots. I am using the iris dataset, always the best to be reproducible for everyone.</p>
+<p>First we define a function to make firs letter of each word upper case, retrieved from here <a href="https://stackoverflow.com/a/18509816/5575616" class="uri">https://stackoverflow.com/a/18509816/5575616</a>.</p>
+<pre class="r"><code>firstup &lt;- function(x) {
+    substr(x, 1, 1) &lt;- toupper(substr(x, 1, 1))
+    x
+}</code></pre>
+<p>We also make use of a nice package that I use almost every time I want different and original colors for my plots. <code>ggsci</code> (<a href="https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html" class="uri">https://cran.r-project.org/web/packages/ggsci/vignettes/ggsci.html</a>).</p>
+<p>Now the plot, then we comment.</p>
+<pre class="r"><code>library(tidyverse)
+library(reshape2)
+library(ggsci)
+
+iris %&gt;% 
+    as_tibble() %&gt;% 
+    melt() %&gt;% 
+    mutate(Species=as.character(Species) ) %&gt;% 
+    mutate(Species=firstup(Species) ) %&gt;% 
+    
+    ggplot(aes(Species, value, fill=Species)) +
+    geom_boxplot(outlier.shape = NA) +
+    
+    coord_flip() +
+    annotate(&#39;rect&#39;, xmin = 0.5, xmax = 1.5, ymin = -Inf, ymax = Inf,fill = &quot;grey&quot;, alpha = 0.2) +
+    annotate(&#39;rect&#39;, xmin = 2.5, xmax = 3.5, ymin = -Inf, ymax = Inf,fill = &quot;grey&quot;, alpha = 0.2) +
+    
+    scale_y_continuous(expand = c(0, 0), limits = c(0,8)) +
+    
+    geom_boxplot(outlier.shape = NA) +
+    
+    theme(axis.line.y = element_blank(),
+          axis.line.x = element_line(),
+          panel.grid = element_blank(),
+          axis.text.y = element_text(size = 10, color=&#39;black&#39;),
+          axis.text.x = element_text(size = 10, color=&#39;black&#39;),
+          axis.ticks.y = element_blank(),
+          axis.title.y = element_blank(), 
+          panel.background = element_blank(),
+          axis.ticks.length.x = unit(.25, &quot;cm&quot;),
+          legend.position = &#39;none&#39;) +
+    ylab(&#39;Length&#39;) +
+    ggsci::scale_fill_npg()</code></pre>
+<p><img src="/post/2019-07-15-make-beautiful-boxplots-ggplot2_files/figure-html/unnamed-chunk-2-1.svg" width="672" /></p>
