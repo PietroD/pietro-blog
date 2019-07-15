@@ -76,10 +76,6 @@ iris %>%
     ggsci::scale_fill_npg()
 ```
 
-```{r, echo=FALSE, fig.cap="The same plot saved in pdf", out.width = '100%'}
-knitr::include_graphics('static/about_files/prova.pdf')
-```
-
 The main point here is to create an alternate background with custom colors that makes the reading of the plot more pleasant.
 
 The `ggplot2` function `annotate` is a useful proxy for this behaviour. The trick here is to call again the main plot object (in this case `geom_boxplot`) after the `annotate` function, otherwise it remains covered.
