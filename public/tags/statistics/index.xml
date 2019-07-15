@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>statistics on Pietro&#39;s website</title>
+    <title>Statistics on Pietro&#39;s website</title>
     <link>/tags/statistics/</link>
-    <description>Recent content in statistics on Pietro&#39;s website</description>
+    <description>Recent content in Statistics on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Customize ggplot2 boxplot - make it beautiful</title>
-      <link>/2019/07/15/customize-ggplot2-boxplot-make-it-beautiful/</link>
+      <link>/2019/07/15/customize-ggplot2-boxplot---make-it-beautiful/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/07/15/customize-ggplot2-boxplot-make-it-beautiful/</guid>
+      <guid>/2019/07/15/customize-ggplot2-boxplot---make-it-beautiful/</guid>
       <description>I like ggplot2 graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.
 Here I will present some tricks to make beautiful - at least to me - boxplots. I am using the iris dataset, always the best to be reproducible for everyone.
 First we define a function to make firs letter of each word upper case, retrieved from here https://stackoverflow.</description>
@@ -37,10 +37,10 @@ library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Speci
     
     <item>
       <title>Principal component analysis - the tidyverse way</title>
-      <link>/2018/09/05/principal-component-analysis-the-tidyverse-way/</link>
+      <link>/2018/09/05/principal-component-analysis---the-tidyverse-way/</link>
       <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/09/05/principal-component-analysis-the-tidyverse-way/</guid>
+      <guid>/2018/09/05/principal-component-analysis---the-tidyverse-way/</guid>
       <description>PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
 With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
 For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>
