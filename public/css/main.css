@@ -246,7 +246,7 @@ code {
   margin-left: 2px;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 600px) {
   .header {
     padding: 25px 0;
   }
@@ -273,7 +273,7 @@ code {
   }
 
   .highlight {
-    font-size: 16px;
+    font-size: 26px;
     margin: 40px -20px;
   }
 
