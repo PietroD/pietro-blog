@@ -72,6 +72,15 @@
 
     <div class="article-content">
       
+<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
+<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
+<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
+<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <p>I work on pancreatic cancer <strong>-omics</strong>. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.</p>
@@ -91,78 +100,18 @@ x &lt;- getGEO(&#39;GSE62165&#39;, destdir = &#39;your/favourite/path&#39;, getG
 <p>We have downloaded the <em>GSE series matrix</em> to file and the <em>GPL .soft annotation</em>.
 Now we load them back.</p>
 <pre class="r"><code>x &lt;- getGEO(filename = &#39;your/favourite/path/GSE62165_series_matrix.txt.gz&#39;)</code></pre>
-<pre class="r"><code>x &lt;- getGEO(filename = &#39;GSE62165_series_matrix.txt.gz&#39;)</code></pre>
 <p>Then we can start exploring the data</p>
 <pre class="r"><code># First we save the expression matrix in a different object
 mat &lt;- exprs(x)
 
 dim(mat)</code></pre>
 <p>[1] 49386 131</p>
-<pre class="r"><code>kable(mat[1:4, 1:8], caption = &#39;Firt line of the expression matrix&#39;)</code></pre>
-<table>
-<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Firt line of the expression matrix</caption>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">GSM1520738</th>
-<th align="right">GSM1520739</th>
-<th align="right">GSM1520740</th>
-<th align="right">GSM1520741</th>
-<th align="right">GSM1520742</th>
-<th align="right">GSM1520743</th>
-<th align="right">GSM1520744</th>
-<th align="right">GSM1520745</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>11715100_at</td>
-<td align="right">3.412714</td>
-<td align="right">3.736906</td>
-<td align="right">3.300559</td>
-<td align="right">3.223035</td>
-<td align="right">3.073504</td>
-<td align="right">3.141523</td>
-<td align="right">3.179156</td>
-<td align="right">3.276449</td>
-</tr>
-<tr class="even">
-<td>11715101_s_at</td>
-<td align="right">4.345207</td>
-<td align="right">3.747892</td>
-<td align="right">4.470069</td>
-<td align="right">3.994475</td>
-<td align="right">4.366361</td>
-<td align="right">4.002958</td>
-<td align="right">3.863463</td>
-<td align="right">4.116236</td>
-</tr>
-<tr class="odd">
-<td>11715102_x_at</td>
-<td align="right">3.054823</td>
-<td align="right">3.076922</td>
-<td align="right">2.897363</td>
-<td align="right">3.175010</td>
-<td align="right">2.695467</td>
-<td align="right">2.948504</td>
-<td align="right">2.881210</td>
-<td align="right">3.081223</td>
-</tr>
-<tr class="even">
-<td>11715103_x_at</td>
-<td align="right">4.510326</td>
-<td align="right">4.156103</td>
-<td align="right">3.456344</td>
-<td align="right">4.064235</td>
-<td align="right">4.227728</td>
-<td align="right">4.271902</td>
-<td align="right">4.717343</td>
-<td align="right">4.296056</td>
-</tr>
-</tbody>
-</table>
+<pre class="r"><code>#kable(mat[1:4, 1:8], caption = &#39;Firt line of the expression matrix&#39;)
+DT::datatable(mat[1:4, 1:8])</code></pre>
+<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["11715100_at","11715101_s_at","11715102_x_at","11715103_x_at"],[3.41271352131561,4.34520727191099,3.05482325206007,4.51032552600467],[3.73690603038194,3.74789230847749,3.07692204607433,4.15610281446874],[3.30055944426299,4.4700687857588,2.89736300095387,3.45634364592096],[3.22303500598219,3.99447477602346,3.17501026211773,4.06423552450107],[3.07350367780166,4.36636060641926,2.69546717702687,4.22772768397451],[3.14152279181929,4.00295770868478,2.94850402506202,4.2719019118133],[3.17915648366528,3.86346290563815,2.88120985445768,4.71734265793437],[3.2764493608665,4.11623641988801,3.08122282001335,4.29605566502748]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>GSM1520738<\/th>\n      <th>GSM1520739<\/th>\n      <th>GSM1520740<\/th>\n      <th>GSM1520741<\/th>\n      <th>GSM1520742<\/th>\n      <th>GSM1520743<\/th>\n      <th>GSM1520744<\/th>\n      <th>GSM1520745<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 <pre class="r"><code>boxplot(mat, outline=F, main=&#39;GSE62165&#39;)</code></pre>
-<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-1.svg" width="672" /></p>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-2.svg" width="672" /></p>
 
     </div>
   </article>
@@ -207,6 +156,9 @@ s.setAttribute('data-timestamp', +new Date());
 
 
     
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 
     
 <script type="application/javascript">
