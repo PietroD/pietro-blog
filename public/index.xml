@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -120,3 +121,111 @@ November 2012-November 2013 Fondazione Edmund Mach - MSc Internship in the Depar
     
   </channel>
 </rss>
+||||||| merged common ancestors
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pietro&#39;s website</title>
+    <link>/</link>
+    <description>Recent content on Pietro&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Customize ggplot2 boxplots - make &#39;em beautiful</title>
+      <link>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</guid>
+      <description>I like ggplot2 graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.
+Here I will present some tricks to make beautiful - at least to me - boxplots. I am using the iris dataset, always the best to be reproducible for everyone.
+First we define a function to make first letter of each word upper case, retrieved from here https://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Update R version RStudio server open</title>
+      <link>/2018/09/11/update-r-version-rstudio-server-open/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/11/update-r-version-rstudio-server-open/</guid>
+      <description>At work I mostly use R through RStudio server installed on an Ubuntu 14.04.5 LTS machine 64-bit.
+The current version of R supported by Ubuntu repositories is version 3.4.4, that I installed with sudo apt-get install r-base and on my machine is installed under the /usr/bin/R path.
+From what I got reading on the web, RStudio server open starts up automatically recognizing this R installation. Since I wanted to update it to the latest release, at the time of writing version 3.</description>
+    </item>
+    
+    <item>
+      <title>Remove legend from ggplot2 plot</title>
+      <link>/2018/09/08/remove-legend-from-ggplot2-plot/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/08/remove-legend-from-ggplot2-plot/</guid>
+      <description>Since I googled this thousands of times, I post it here to help me stick it into my mind.
+To completely remove the legend from a ggplot2 graph, use this:
+theme(legend.position = &#39;none&#39;)
+If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.
+library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Species)) + geom_boxplot() # remove legend iris %&amp;gt;% ggplot(aes(Species, Sepal.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hello!
+I am a postdoctoral researcher in the Department of Diagnostic and Public Health at the University of Verona. I work as a computational biologist (some they say bioinformatician) on pancreatic cancer genomics and transcriptomics data mainly, but I also perform statistical analysis and public datasets mining, meta-analysis and much more.
+I did my PhD in Biotechnology at the same university. I am very curious and I love to learn and discover new things.</description>
+    </item>
+    
+    <item>
+      <title>First post</title>
+      <link>/2018/09/05/first-post/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/05/first-post/</guid>
+      <description>This is my new website which I intend to use it as a lab notebook where I share my research projects, ideas and R coding examples</description>
+    </item>
+    
+    <item>
+      <title>How to create a website using blogdown, RMarkdown, Github and Netlify</title>
+      <link>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/05/how-to-create-a-website-using-blogdown-rmarkdown-github-and-netlify/</guid>
+      <description>I have to express gratitude to John Muschelli who recorded this useful and very fun video on how to create a website blog using RStudio, blogdown, Github and Netlify. Here is the link https://youtu.be/syWAKaj-4ck. Also I want to thank rbind.io community that provided me with a custom address at the rbind domain, which is very helpful if you want to deploy your blog at Netlify.com and you don’t have your custom address.</description>
+    </item>
+    
+    <item>
+      <title>Principal component analysis - the tidyverse way</title>
+      <link>/2018/09/05/principal-component-analysis-the-tidyverse-way/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/05/principal-component-analysis-the-tidyverse-way/</guid>
+      <description>PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>
+    </item>
+    
+    <item>
+      <title>Curriculum vitae</title>
+      <link>/cv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/cv/</guid>
+      <description>Department of Biotechnology, University of Verona
+Strada Le Grazie 15, Verona
+pietro.delfino (at) univr (dot) it
+
+Born April 26, 1988 - Genova  RESEARCH EXPERIENCE May-November 2015 Laimburg Research Center - Researcher in the lab of Applied Genomics and Molecular Biology - Advisor: Dr. Thomas Letschka
+December 2013-January 2015 ETH Zürich - Research Assistant at the Institute of Agricultural Sciences - Advisor: Prof. Bruno Studer
+November 2012-November 2013 Fondazione Edmund Mach - MSc Internship in the Department of Genomics - Advisor: Dr.</description>
+    </item>
+    
+  </channel>
+</rss>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e

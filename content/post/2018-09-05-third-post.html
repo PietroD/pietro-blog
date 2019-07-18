@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Principal component analysis - the tidyverse way"
 author: "Pietro Delfino"
@@ -160,3 +161,164 @@ categories: R, github, stats, tidyverse, PCA
 <p><img src="/post/2018-09-05-third-post_files/figure-html/unnamed-chunk-5-1.svg" width="672" /></p>
 <p>To be continued …</p>
 </div>
+||||||| merged common ancestors
+=======
+---
+title: "Principal component analysis - the tidyverse way"
+author: "Pietro Delfino"
+date: '2018-09-05'
+tags:
+- R coding
+- statistics
+- PCA
+- tidyverse
+categories: R, github, stats, tidyverse, PCA
+---
+
+
+
+<div id="pca-with-any-kind-of-data" class="section level1">
+<h1>PCA with any kind of data</h1>
+<p>In my daily work I am often asked to perform <a href="https://en.wikipedia.org/wiki/Principal_component_analysis"><strong>Principal Component Analysis</strong></a> of various type of <em>-omics</em> data, for example data coming from RNA-Seq.</p>
+<p>With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.</p>
+<p>For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</p>
+<pre><code>## # A tibble: 845 x 5
+##    `Peak Name` KC_DMEM_1ug_310… KC_DMEM_1ug_310… KC_DMEM_1ug_310…
+##    &lt;chr&gt;                  &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1 sp|P19137|…           92493.          102059.           94617.
+##  2 sp|P02469|…          101139.           91133.           90096.
+##  3 sp|Q80X90|…          104487.          126150.          113360.
+##  4 sp|P02468|…          133946.          219006.          150345.
+##  5 sp|P60710|…          479363.          534342.          406184.
+##  6 sp|P52480|…          372423.          291951.          381723.
+##  7 sp|P16858|…          646268.          674944.          722149.
+##  8 sp|Q8BTM8|…          111774.          104019.           83382.
+##  9 sp|Q8VHX6-…            5144.            2002.            4573.
+## 10 sp|Q68FD5|…           40380.           63811.           40825.
+## # … with 835 more rows, and 1 more variable: KC_HFD_1ug_31072018_2 &lt;dbl&gt;</code></pre>
+<p>I recently started the transition to the <a href="https://www.tidyverse.org/"><strong>tidyverse</strong></a> approach of data science into R, after having learnt R the classic way a couple of years ago.</p>
+<p>Also for performig PCA I came up with a tidyverse script that goes from a dataframe (a tibble) like the one above and the output of a PCA in a couple of steps.</p>
+<p>Before going to the PCA step I want to show how I usually proceed with exploratory analysis on a tibble like this.</p>
+<p>First thing I usually do is a <code>glimpse</code> of the tibble that gives me an overview of all the variables in my df.</p>
+<pre class="r"><code>glimpse(x)</code></pre>
+<pre><code>## Observations: 845
+## Variables: 37
+## $ Row                     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1…
+## $ Index                   &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 1…
+## $ `Peak Name`             &lt;chr&gt; &quot;sp|P19137|LAMA1_MOUSE&quot;, &quot;sp|P02469|LAMB…
+## $ `m/z`                   &lt;chr&gt; &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;…
+## $ `Ret. Time`             &lt;chr&gt; &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;, &quot;N/A&quot;…
+## $ Group                   &lt;chr&gt; &quot;Laminin subunit alpha-1 OS=Mus musculus…
+## $ Use                     &lt;chr&gt; &quot;TRUE&quot;, &quot;TRUE&quot;, &quot;TRUE&quot;, &quot;TRUE&quot;, &quot;TRUE&quot;, …
+## $ KC_DMEM_1ug_31072018_1  &lt;dbl&gt; 92492.6460, 101138.7879, 104487.0424, 13…
+## $ KC_DMEM_1ug_31072018_2  &lt;dbl&gt; 102058.714, 91133.368, 126150.461, 21900…
+## $ KC_DMEM_1ug_31072018_3  &lt;dbl&gt; 94617.170, 90095.832, 113359.859, 150344…
+## $ KC_HFD_1ug_31072018_2   &lt;dbl&gt; 141235.060, 156559.069, 185871.372, 3552…
+## $ KC_HFD_1ug_31072018_1   &lt;dbl&gt; 107860.988, 170165.752, 175837.574, 3409…
+## $ KC_HFD_1ug_31072018_3   &lt;dbl&gt; 134339.670, 170401.829, 201835.156, 4114…
+## $ KC_LFD_1ug_31072018_1   &lt;dbl&gt; 96883.144, 124822.049, 157567.928, 28397…
+## $ KC_LFD_1ug_31072018_2   &lt;dbl&gt; 109001.256, 105442.668, 174725.227, 2718…
+## $ KC_LFD_1ug_31072018_3   &lt;dbl&gt; 119284.061, 117146.724, 183391.922, 2781…
+## $ KC_MW_1ug_30072018_1    &lt;dbl&gt; 241736.419, 225670.284, 122463.003, 4439…
+## $ KC_MW_1ug_30072018_2    &lt;dbl&gt; 225323.761, 234603.622, 138807.923, 4535…
+## $ KC_MW_1ug_30072018_3    &lt;dbl&gt; 244955.833, 230548.388, 135335.068, 4640…
+## $ KC_ObOb_2ug_02082018_1  &lt;dbl&gt; 81458.883, 56741.512, 135206.238, 77641.…
+## $ KC_ObOb_2ug_02082018_2  &lt;dbl&gt; 123353.229, 165144.751, 102779.926, 8880…
+## $ KC_ObOb_2ug_02082018_3  &lt;dbl&gt; 68812.147, 70103.407, 119229.105, 45661.…
+## $ KPC_DMEM_2ug_02082018_1 &lt;dbl&gt; 541002.013, 644442.738, 137341.572, 1516…
+## $ KPC_DMEM_2ug_02082018_2 &lt;dbl&gt; 521795.3654, 656713.8844, 135178.6800, 1…
+## $ KPC_DMEM_2ug_02082018_3 &lt;dbl&gt; 541077.9033, 620183.4247, 140828.8416, 1…
+## $ KPC_HFD_1ug_01082018_1  &lt;dbl&gt; 83243.1639, 84218.7445, 221324.8219, 203…
+## $ KPC_HFD_1ug_01082018_2  &lt;dbl&gt; 78851.977, 84635.587, 211981.316, 183074…
+## $ KPC_HFD_1ug_01082018_3  &lt;dbl&gt; 92941.804, 81691.244, 205096.659, 198683…
+## $ KPC_LFD_2ug_02082018_1  &lt;dbl&gt; 53010.1927, 63087.4862, 215425.8311, 152…
+## $ KPC_LFD_2ug_02082018_2  &lt;dbl&gt; 77148.951, 67095.568, 202637.954, 153769…
+## $ KPC_LFD_2ug_02082018_3  &lt;dbl&gt; 61712.342, 75914.466, 208134.349, 173137…
+## $ KPC_MW_1ug_30072018_1   &lt;dbl&gt; 32942.678, 51122.733, 136190.615, 101423…
+## $ KPC_MW_1ug_30072018_2   &lt;dbl&gt; 49165.105, 58590.269, 146668.774, 93988.…
+## $ KPC_MW_1ug_30072018_3   &lt;dbl&gt; 47427.573, 57140.206, 145430.794, 98053.…
+## $ KPC_ObOb_2ug_02082018_1 &lt;dbl&gt; 48350.404, 64255.086, 184736.055, 130072…
+## $ KPC_ObOb_2ug_02082018_2 &lt;dbl&gt; 62506.295, 54622.711, 151711.672, 121300…
+## $ KPC_ObOb_2ug_02082018_3 &lt;dbl&gt; 56356.0798, 73475.8549, 137246.7337, 856…</code></pre>
+<p>We can see that the values that I’d need for the PCA are in columns of the double type, but we also have two columns, <code>Row</code> and <code>Index</code> which are of the same double type. Keep this in mind for later. For computing PCA I only need the columns with the mass spec intensities values, then I want to focus on those columns, using another wonderful command from the <code>skimr</code> package.</p>
+<pre class="r"><code>skim(x[8:length(names(x))])</code></pre>
+<pre><code>## Skim summary statistics
+##  n obs: 845 
+##  n variables: 30 
+## 
+## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
+##                 variable missing complete   n     mean        sd     p0
+##   KC_DMEM_1ug_31072018_1       0      845 845 34975.84  1e+05    314.44
+##   KC_DMEM_1ug_31072018_2       0      845 845 34975.84  1e+05    282.44
+##   KC_DMEM_1ug_31072018_3       0      845 845 34975.84  1e+05    280.62
+##    KC_HFD_1ug_31072018_1       0      845 845 34975.84  87432.69 112.32
+##    KC_HFD_1ug_31072018_2       0      845 845 34975.84  86230.97 194.03
+##    KC_HFD_1ug_31072018_3       0      845 845 34975.84  83873.62 193.16
+##    KC_LFD_1ug_31072018_1       0      845 845 34975.84  83290.05 221.11
+##    KC_LFD_1ug_31072018_2       0      845 845 34975.84  81571.8  177.2 
+##    KC_LFD_1ug_31072018_3       0      845 845 34975.84  82301.74 166.81
+##     KC_MW_1ug_30072018_1       0      845 845 34975.84  78698.84 120.63
+##     KC_MW_1ug_30072018_2       0      845 845 34975.84  78937.85 104.24
+##     KC_MW_1ug_30072018_3       0      845 845 34975.84  78765.77 133.36
+##   KC_ObOb_2ug_02082018_1       0      845 845 34975.84 125667.94 551.1 
+##   KC_ObOb_2ug_02082018_2       0      845 845 34975.84 108256.92 783.88
+##   KC_ObOb_2ug_02082018_3       0      845 845 34975.84 112875.47 850.44
+##  KPC_DMEM_2ug_02082018_1       0      845 845 34975.84  89362.21 172.59
+##  KPC_DMEM_2ug_02082018_2       0      845 845 34975.84  89151.34 169.29
+##  KPC_DMEM_2ug_02082018_3       0      845 845 34975.84  89116.63 174.26
+##   KPC_HFD_1ug_01082018_1       0      845 845 34975.84  74808.5   85.71
+##   KPC_HFD_1ug_01082018_2       0      845 845 34975.84  74158.33 142.09
+##   KPC_HFD_1ug_01082018_3       0      845 845 34975.84  73216.22 129.75
+##   KPC_LFD_2ug_02082018_1       0      845 845 34975.84  79818.84 104.34
+##   KPC_LFD_2ug_02082018_2       0      845 845 34975.84  78822.06 113.19
+##   KPC_LFD_2ug_02082018_3       0      845 845 34975.84  80182.82  75.6 
+##    KPC_MW_1ug_30072018_1       0      845 845 34975.84  85040.21  97.63
+##    KPC_MW_1ug_30072018_2       0      845 845 34975.84  84329.77 102.49
+##    KPC_MW_1ug_30072018_3       0      845 845 34975.84  83284.14 124.68
+##  KPC_ObOb_2ug_02082018_1       0      845 845 34975.84 109428.16 257.51
+##  KPC_ObOb_2ug_02082018_2       0      845 845 34975.84 114769.96 223.63
+##  KPC_ObOb_2ug_02082018_3       0      845 845 34975.84 110270.84 312.72
+##      p25      p50      p75       p100     hist
+##  3669.72  9874.32 31670.24 2321323.77 ▇▁▁▁▁▁▁▁
+##  3567.44 10476.03 30446.56 2197764.89 ▇▁▁▁▁▁▁▁
+##  3939    10572.55 30898.2  2210390    ▇▁▁▁▁▁▁▁
+##  3610.12 10964.64 31731.81 1656179.54 ▇▁▁▁▁▁▁▁
+##  3701.72 10740.47 30305.09 1555478.02 ▇▁▁▁▁▁▁▁
+##  3718.97 10660.41 31724.08 1521230.05 ▇▁▁▁▁▁▁▁
+##  3386.55 10854.49 32737.65 1502810.39 ▇▁▁▁▁▁▁▁
+##  3146.54 11037.74 32005.17 1402967.89 ▇▁▁▁▁▁▁▁
+##  3441.78 11205.45 32125.35 1443498.35 ▇▁▁▁▁▁▁▁
+##  3899.37 11352.79 34257.21 1407641.47 ▇▁▁▁▁▁▁▁
+##  3878.64 12142.14 32517.91 1457247.72 ▇▁▁▁▁▁▁▁
+##  4258.39 11696.88 31717.49 1406668.3  ▇▁▁▁▁▁▁▁
+##  5732.2  13972.97 35414.98 3416001.26 ▇▁▁▁▁▁▁▁
+##  5659.62 14298.11 37408.3  2861276.86 ▇▁▁▁▁▁▁▁
+##  5883.78 13142.28 36455.51   3e+06    ▇▁▁▁▁▁▁▁
+##  3765.43 10285.87 29021.11 1516795.63 ▇▁▁▁▁▁▁▁
+##  3612.7   9972.09 27652.96 1426041.45 ▇▁▁▁▁▁▁▁
+##  3542.88  9617.48 28329.18 1439909.45 ▇▁▁▁▁▁▁▁
+##  4316.47 11346.94 31593.02 1092648.15 ▇▁▁▁▁▁▁▁
+##  4248.74 12010.1  32500.46 1095141.79 ▇▁▁▁▁▁▁▁
+##  4452.21 11569.78 32150.06   1e+06    ▇▁▁▁▁▁▁▁
+##  3994.63 11190.07 33846.25 1415241.87 ▇▁▁▁▁▁▁▁
+##  4303.33 11905.65 33457.79 1353065.88 ▇▁▁▁▁▁▁▁
+##  3504.66 11186.31 33042.14 1411504    ▇▁▁▁▁▁▁▁
+##  3791.31 11082.75 32119.23 1577858.5  ▇▁▁▁▁▁▁▁
+##  4046.36 10922.44 33098.08 1575304.07 ▇▁▁▁▁▁▁▁
+##  3980.74 11417.68 32469.39 1502950.34 ▇▁▁▁▁▁▁▁
+##  3166.78  9861.43 31190.16 2426505.77 ▇▁▁▁▁▁▁▁
+##  3244.2   9860.07 32253.01 2698635.37 ▇▁▁▁▁▁▁▁
+##  3273.04  9286.63 31501.41 2438293.6  ▇▁▁▁▁▁▁▁</code></pre>
+<p>With the <code>skimr</code> command I see that all the variables are complete, so there are no missing values, which is good for PCA, that usually does not like <code>NA</code>’s.</p>
+<p>Why not doing also a boxplot?</p>
+<pre class="r"><code>x %&gt;% 
+    select(matches(&#39;ug&#39;)) %&gt;%
+    rownames_to_column %&gt;%
+    gather(variable, value, -rowname) %&gt;%
+    ggplot(aes(variable, log2(value + 1))) + geom_boxplot() +
+    coord_flip() +
+    theme_bw()</code></pre>
+<p><img src="/post/2018-09-05-third-post_files/figure-html/unnamed-chunk-5-1.svg" width="672" /></p>
+<p>To be continued …</p>
+</div>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e

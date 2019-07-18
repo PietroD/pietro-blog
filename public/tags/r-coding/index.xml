@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -65,3 +66,56 @@ For example something like this, where I have mouse proteins in rows and mass sp
     
   </channel>
 </rss>
+||||||| merged common ancestors
+=======
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R coding on Pietro&#39;s website</title>
+    <link>/tags/r-coding/</link>
+    <description>Recent content in R coding on Pietro&#39;s website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/r-coding/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Customize ggplot2 boxplots - make &#39;em beautiful</title>
+      <link>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</guid>
+      <description>I like ggplot2 graphic style, but to make publication acceptable plots, especially to align with graphic style of some journals, sometimes it is necessary to customize plots and modify some parameters that usually are kept as default.
+Here I will present some tricks to make beautiful - at least to me - boxplots. I am using the iris dataset, always the best to be reproducible for everyone.
+First we define a function to make first letter of each word upper case, retrieved from here https://stackoverflow.</description>
+    </item>
+    
+    <item>
+      <title>Remove legend from ggplot2 plot</title>
+      <link>/2018/09/08/remove-legend-from-ggplot2-plot/</link>
+      <pubDate>Sat, 08 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/08/remove-legend-from-ggplot2-plot/</guid>
+      <description>Since I googled this thousands of times, I post it here to help me stick it into my mind.
+To completely remove the legend from a ggplot2 graph, use this:
+theme(legend.position = &#39;none&#39;)
+If in your plot you are using a different theme from the default one, place the above code after the code for the theme, otherwise it will be replaced.
+library(tidyverse) iris %&amp;gt;% ggplot(aes(Species, Sepal.Length, col = Species)) + geom_boxplot() # remove legend iris %&amp;gt;% ggplot(aes(Species, Sepal.</description>
+    </item>
+    
+    <item>
+      <title>Principal component analysis - the tidyverse way</title>
+      <link>/2018/09/05/principal-component-analysis-the-tidyverse-way/</link>
+      <pubDate>Wed, 05 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/05/principal-component-analysis-the-tidyverse-way/</guid>
+      <description>PCA with any kind of data In my daily work I am often asked to perform Principal Component Analysis of various type of -omics data, for example data coming from RNA-Seq.
+With this data usually the rows correspond to genes (transcripts, proteins, etc..) while columns are individuals or samples.
+For example something like this, where I have mouse proteins in rows and mass spec peak intensities in columns, where each column is a different sample:</description>
+    </item>
+    
+  </channel>
+</rss>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
