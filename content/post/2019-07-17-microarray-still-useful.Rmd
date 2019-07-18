@@ -69,6 +69,6 @@ dim(mat)
 
 kable(mat[1:4, 1:8], caption = 'Firt line of the expression matrix')
 
-boxplot(mat, outline=F)
+boxplot(mat, outline=F, main='GSE62165')
 ```
 
