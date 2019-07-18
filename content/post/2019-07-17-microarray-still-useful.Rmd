@@ -55,7 +55,7 @@ Now we load them back.
 x <- getGEO(filename = 'your/favourite/path/GSE62165_series_matrix.txt.gz')
 ```
 
-```{r message=FALSE, warning=FALSE, dev='svg', include=FALSE}
+```{r message=FALSE, warning=FALSE, dev='svg', eval=FALSE}
 x <- getGEO(filename = 'GSE62165_series_matrix.txt.gz')
 ```
 
@@ -63,12 +63,12 @@ Then we can start exploring the data
 
 ```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 # First we save the expression matrix in a different object
-mat <- exprs(x)
+#mat <- exprs(x)
 
-dim(mat)
+#dim(mat)
 
-kable(mat[1:4, 1:8], caption = 'Firt line of the expression matrix')
+#kable(mat[1:4, 1:8], caption = 'Firt line of the expression matrix')
 
-boxplot(mat, outline=F)
+#boxplot(mat, outline=F)
 ```
 
