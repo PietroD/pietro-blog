@@ -1,21 +1,77 @@
----
-title: "Gene expression - microarray data still useful"
-author: "Pietro Delfino"
-date:  "2019-07-18"
-tags:
-- R coding
-- ggplot
-- statistics
-- microarray
-- gene expression
-- bioinformatics
-categories:
-- R
-- stats
-- ggplot
-- bioinformatics
----
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.6" />
 
+
+<title>Gene expression - microarray data still useful - Pietro&#39;s website</title>
+<meta property="og:title" content="Gene expression - microarray data still useful - Pietro&#39;s website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/mainoverwrite.css?v=1">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/pietro3.png"
+         width="500"
+         height="500"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/pietrod">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">5 min read</span>
+    
+
+    <h1 class="article-title">Gene expression - microarray data still useful</h1>
+
+    
+    <span class="article-date">2019/07/18</span>
+    
+
+    <div class="article-content">
+      
 <script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
 <script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
 <link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
@@ -173,3 +229,68 @@ datatable(which(array(grepl(&quot;\\btumor\\b&quot;,as.matrix(phenodata)),dim(ph
 datatable(phenodata[,c(10,39)])</code></pre>
 <div id="htmlwidget-2" style="width:100%;height:auto;" class="datatables html-widget"></div>
 <script type="application/json" data-for="htmlwidget-2">{"x":{"filter":"none","data":[["GSM1520738","GSM1520739","GSM1520740","GSM1520741","GSM1520742","GSM1520743","GSM1520744","GSM1520745","GSM1520746","GSM1520747","GSM1520748","GSM1520749","GSM1520750","GSM1520751","GSM1520752","GSM1520753","GSM1520754","GSM1520755","GSM1520756","GSM1520757","GSM1520758","GSM1520759","GSM1520760","GSM1520761","GSM1520762","GSM1520763","GSM1520764","GSM1520765","GSM1520766","GSM1520767","GSM1520768","GSM1520769","GSM1520770","GSM1520771","GSM1520772","GSM1520773","GSM1520774","GSM1520775","GSM1520776","GSM1520777","GSM1520778","GSM1520779","GSM1520780","GSM1520781","GSM1520782","GSM1520783","GSM1520784","GSM1520785","GSM1520786","GSM1520787","GSM1520788","GSM1520789","GSM1520790","GSM1520791","GSM1520792","GSM1520793","GSM1520794","GSM1520795","GSM1520796","GSM1520797","GSM1520798","GSM1520799","GSM1520800","GSM1520801","GSM1520802","GSM1520803","GSM1520804","GSM1520805","GSM1520806","GSM1520807","GSM1520808","GSM1520809","GSM1520810","GSM1520811","GSM1520812","GSM1520813","GSM1520814","GSM1520815","GSM1520816","GSM1520817","GSM1520818","GSM1520819","GSM1520820","GSM1520821","GSM1520822","GSM1520823","GSM1520824","GSM1520825","GSM1520826","GSM1520827","GSM1520828","GSM1520829","GSM1520830","GSM1520831","GSM1520832","GSM1520833","GSM1520834","GSM1520835","GSM1520836","GSM1520837","GSM1520838","GSM1520839","GSM1520840","GSM1520841","GSM1520842","GSM1520843","GSM1520844","GSM1520845","GSM1520846","GSM1520847","GSM1520848","GSM1520849","GSM1520850","GSM1520851","GSM1520852","GSM1520853","GSM1520854","GSM1520855","GSM1520856","GSM1520857","GSM1520858","GSM1520859","GSM1520860","GSM1520861","GSM1520862","GSM1520863","GSM1520864","GSM1520865","GSM1520866","GSM1520867","GSM1520868"],["tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: non-tumoral pancreatic tissue","tissue: pancreatic tumor","tissue: pancreatic tumor","tissue: pancreatic tumor"],["pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor","pancreatic tumor","non-tumoral pancreatic tissue","pancreatic tumor","pancreatic tumor","pancreatic tumor"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>characteristics_ch1<\/th>\n      <th>tissue:ch1<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"order":[],"autoWidth":false,"orderClasses":false,"columnDefs":[{"orderable":false,"targets":0}]}},"evals":[],"jsHooks":[]}</script>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://pietrod.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-119674869-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+

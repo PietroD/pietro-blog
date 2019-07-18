@@ -6,17 +6,17 @@
     <description>Recent content in Posts on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 18 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gene expression - microarray data still useful</title>
-      <link>/2019/07/17/gene-expression-microarray-data-still-useful/</link>
-      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      <link>/2019/07/18/gene-expression-microarray-data-still-useful/</link>
+      <pubDate>Thu, 18 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/07/17/gene-expression-microarray-data-still-useful/</guid>
+      <guid>/2019/07/18/gene-expression-microarray-data-still-useful/</guid>
       <description>I work on pancreatic cancer -omics. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.
 The most common -omics datasets out there are transcriptomics one; both RNA-Seq and good ol’ microarray. Regarding RNA-Seq, the well known TCGA and ICGC are my starting point for any explorative data mining analysis.</description>
     </item>

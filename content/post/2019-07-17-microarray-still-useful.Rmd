@@ -1,7 +1,7 @@
 ---
 title: "Gene expression - microarray data still useful"
 author: "Pietro Delfino"
-date: '2019-07-17'
+date:  "2019-07-18"
 tags:
 - R coding
 - ggplot
@@ -81,7 +81,7 @@ What about annotation data? They are stored in `fData` slot. We save them in a u
 ```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 ann <- fData(x)
 
-kable(colnames(ann))
+colnames(ann)
 
 # Subset to columns we'll use
 ann <- ann[,c('ID', 'Gene Symbol')]
@@ -89,7 +89,7 @@ ann <- ann[,c('ID', 'Gene Symbol')]
 
 For my project I need to work only with cancer samples, so we explore **pheno data**, stored in the slot `pData` to identify them.
 
-```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
+```{r message=FALSE, warning=FALSE, dev='svg'}
 phenodata <- pData(x)
 
 # From here https://stackoverflow.com/questions/51316238/find-substring-in-dataframe-in-r I found I nice way to identify the position of a string in the entire dataframe; 
@@ -97,7 +97,7 @@ phenodata <- pData(x)
 datatable(which(array(grepl("\\btumor\\b",as.matrix(phenodata)),dim(phenodata)),T))
 ```
 
-```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
+```{r message=FALSE, warning=FALSE, dev='svg'}
 # The word is included in the columns 10 and 39; let's check them
 datatable(phenodata[,c(10,39)])
 ```
