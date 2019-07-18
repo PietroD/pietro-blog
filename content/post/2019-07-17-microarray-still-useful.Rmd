@@ -1,0 +1,69 @@
+---
+title: "Gene expression - microarray data still useful"
+author: "Pietro Delfino"
+date: '2019-07-17'
+tags:
+- R coding
+- ggplot
+- statistics
+- microarray
+- gene expression
+- bioinformatics
+categories:
+- R
+- stats
+- ggplot
+- bioinformatics
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(reshape2)
+library(GEOquery)
+library(DT)
+```
+
+I work on pancreatic cancer **-omics**. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.
+
+The most common -omics datasets out there are transcriptomics one; both RNA-Seq and good ol' microarray. Regarding RNA-Seq, the well known TCGA and ICGC are my starting point for any explorative data mining analysis.
+
+Regarding microarray, few studies with clear data have been published in the past, and someone has already collected the most interesting ones (see [Birnbaum et al. 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5674743/), [Zhao et al. 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5975421/)).
+
+For the scopes of my research I have also explored some of these datasets. The majority of theme are stored in the [GEO database](https://www.ncbi.nlm.nih.gov/geo/).
+
+Here I want to present a basic workflow to retrieve a microarray expression dataset from GEO and to perform basic explorative analysis in ***R***. As an example I take [GSE62165](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62165) dataset.
+
+To download and access data I use the *Bioconductor* `GEOquery` package (https://bioconductor.org/packages/release/bioc/html/GEOquery.html).
+
+```{r message=FALSE, warning=FALSE, dev='svg',eval=FALSE}
+# Load some libraries
+library(tidyverse)
+library(reshape2)
+library(ggsci)
+library(GEOquery)
+
+# Downlaod ExpressionSet
+x <- getGEO('GSE62165', destdir = 'your/favourite/path', getGPL = T)
+```
+
+We have downloaded the *GSE series matrix* to file and the *GPL .soft annotation*.
+Now we load them back.
+
+```{r message=FALSE, warning=FALSE, dev='svg', eval=FALSE}
+x <- getGEO(filename = 'your/favourite/path/GSE62165_series_matrix.txt.gz')
+```
+
+```{r message=FALSE, warning=FALSE, dev='svg', include=FALSE}
+x <- getGEO(filename = 'GSE62165_series_matrix.txt.gz')
+```
+
+Then we can start exploring the data
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+# First we save the expression matrix in a different object
+mat <- exprs(x)
+
+boxplot(mat, outline=F)
+```
+

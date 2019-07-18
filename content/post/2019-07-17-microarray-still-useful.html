@@ -1,0 +1,43 @@
+---
+title: "Gene expression - microarray data still useful"
+author: "Pietro Delfino"
+date: '2019-07-17'
+tags:
+- R coding
+- ggplot
+- statistics
+- microarray
+- gene expression
+- bioinformatics
+categories:
+- R
+- stats
+- ggplot
+- bioinformatics
+---
+
+
+
+<p>I work on pancreatic cancer <strong>-omics</strong>. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.</p>
+<p>The most common -omics datasets out there are transcriptomics one; both RNA-Seq and good ol’ microarray. Regarding RNA-Seq, the well known TCGA and ICGC are my starting point for any explorative data mining analysis.</p>
+<p>Regarding microarray, few studies with clear data have been published in the past, and someone has already collected the most interesting ones (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5674743/">Birnbaum et al. 2017</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5975421/">Zhao et al. 2018</a>).</p>
+<p>For the scopes of my research I have also explored some of these datasets. The majority of theme are stored in the <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO database</a>.</p>
+<p>Here I want to present a basic workflow to retrieve a microarray expression dataset from GEO and to perform basic explorative analysis in <strong><em>R</em></strong>. As an example I take <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62165">GSE62165</a> dataset.</p>
+<p>To download and access data I use the <em>Bioconductor</em> <code>GEOquery</code> package (<a href="https://bioconductor.org/packages/release/bioc/html/GEOquery.html" class="uri">https://bioconductor.org/packages/release/bioc/html/GEOquery.html</a>).</p>
+<pre class="r"><code># Load some libraries
+library(tidyverse)
+library(reshape2)
+library(ggsci)
+library(GEOquery)
+
+# Downlaod ExpressionSet
+x &lt;- getGEO(&#39;GSE62165&#39;, destdir = &#39;your/favourite/path&#39;, getGPL = T)</code></pre>
+<p>We have downloaded the <em>GSE series matrix</em> to file and the <em>GPL .soft annotation</em>.
+Now we load them back.</p>
+<pre class="r"><code>x &lt;- getGEO(filename = &#39;your/favourite/path/GSE62165_series_matrix.txt.gz&#39;)</code></pre>
+<p>Then we can start exploring the data</p>
+<pre class="r"><code># First we save the expression matrix in a different object
+mat &lt;- exprs(x)
+
+boxplot(mat, outline=F)</code></pre>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-1.svg" width="672" /></p>

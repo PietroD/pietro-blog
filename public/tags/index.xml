@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,25 +14,52 @@
     <item>
       <title>R coding</title>
       <link>/tags/r-coding/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/r-coding/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>bioinformatics</title>
+      <link>/tags/bioinformatics/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bioinformatics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gene expression</title>
+      <link>/tags/gene-expression/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gene-expression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>ggplot</title>
       <link>/tags/ggplot/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/ggplot/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>microarray</title>
+      <link>/tags/microarray/</link>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/microarray/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>statistics</title>
       <link>/tags/statistics/</link>
-      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/statistics/</guid>
       <description></description>

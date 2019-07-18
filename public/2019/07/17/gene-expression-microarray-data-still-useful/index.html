@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.55.6" />
+
+
+<title>Gene expression - microarray data still useful - Pietro&#39;s website</title>
+<meta property="og:title" content="Gene expression - microarray data still useful - Pietro&#39;s website">
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+<link rel="stylesheet" href="/css/mainoverwrite.css?v=1">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/images/pietro3.png"
+         width="500"
+         height="500"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/pietrod">GitHub</a></li>
+    
+    <li><a href="https://twitter.com/Pietro_Delfino">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Gene expression - microarray data still useful</h1>
+
+    
+    <span class="article-date">2019/07/17</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>I work on pancreatic cancer <strong>-omics</strong>. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.</p>
+<p>The most common -omics datasets out there are transcriptomics one; both RNA-Seq and good ol’ microarray. Regarding RNA-Seq, the well known TCGA and ICGC are my starting point for any explorative data mining analysis.</p>
+<p>Regarding microarray, few studies with clear data have been published in the past, and someone has already collected the most interesting ones (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5674743/">Birnbaum et al. 2017</a>, <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5975421/">Zhao et al. 2018</a>).</p>
+<p>For the scopes of my research I have also explored some of these datasets. The majority of theme are stored in the <a href="https://www.ncbi.nlm.nih.gov/geo/">GEO database</a>.</p>
+<p>Here I want to present a basic workflow to retrieve a microarray expression dataset from GEO and to perform basic explorative analysis in <strong><em>R</em></strong>. As an example I take <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE62165">GSE62165</a> dataset.</p>
+<p>To download and access data I use the <em>Bioconductor</em> <code>GEOquery</code> package (<a href="https://bioconductor.org/packages/release/bioc/html/GEOquery.html" class="uri">https://bioconductor.org/packages/release/bioc/html/GEOquery.html</a>).</p>
+<pre class="r"><code># Load some libraries
+library(tidyverse)
+library(reshape2)
+library(ggsci)
+library(GEOquery)
+
+# Downlaod ExpressionSet
+x &lt;- getGEO(&#39;GSE62165&#39;, destdir = &#39;your/favourite/path&#39;, getGPL = T)</code></pre>
+<p>We have downloaded the <em>GSE series matrix</em> to file and the <em>GPL .soft annotation</em>.
+Now we load them back.</p>
+<pre class="r"><code>x &lt;- getGEO(filename = &#39;your/favourite/path/GSE62165_series_matrix.txt.gz&#39;)</code></pre>
+<p>Then we can start exploring the data</p>
+<pre class="r"><code># First we save the expression matrix in a different object
+mat &lt;- exprs(x)
+
+boxplot(mat, outline=F)</code></pre>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-1.svg" width="672" /></p>
+
+    </div>
+  </article>
+
+  <div id="disqus_thread"></div>
+<script>
+(function() {
+var d = document, s = d.createElement('script');
+s.src = 'https://pietrod.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-119674869-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+  </body>
+</html>
+
