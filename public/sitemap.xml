@@ -4,41 +4,67 @@
   
   <url>
     <loc>/categories/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>/2019/07/17/gene-expression-microarray-data-still-useful/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <loc>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</loc>
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
   </url>
   
   <url>
     <loc>/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/r/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/r-coding/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -58,17 +84,25 @@
   <url>
     <loc>/tags/gene-expression/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/ggplot/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/ggplot/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -76,17 +110,25 @@
   <url>
     <loc>/tags/microarray/</loc>
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/statistics/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/stats/</loc>
+<<<<<<< HEAD
     <lastmod>2019-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -94,6 +136,10 @@
   <url>
     <loc>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</loc>
     <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+=======
+    <lastmod>2019-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
   </url>
   
   <url>

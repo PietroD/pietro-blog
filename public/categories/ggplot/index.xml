@@ -6,12 +6,17 @@
     <description>Recent content in ggplot on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+=======
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     
 	<atom:link href="/categories/ggplot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>Gene expression - microarray data still useful</title>
       <link>/2019/07/17/gene-expression-microarray-data-still-useful/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
@@ -22,6 +27,8 @@ The most common -omics datasets out there are transcriptomics one; both RNA-Seq 
     </item>
     
     <item>
+=======
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
       <title>Customize ggplot2 boxplots - make &#39;em beautiful</title>
       <link>/2019/07/15/customize-ggplot2-boxplots-make-em-beautiful/</link>
       <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>

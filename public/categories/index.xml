@@ -6,7 +6,11 @@
     <description>Recent content in Categories on Pietro&#39;s website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+<<<<<<< HEAD
     <lastBuildDate>Wed, 17 Jul 2019 00:00:00 +0000</lastBuildDate>
+=======
+    <lastBuildDate>Mon, 15 Jul 2019 00:00:00 +0000</lastBuildDate>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,13 +18,18 @@
     <item>
       <title>R</title>
       <link>/categories/r/</link>
+<<<<<<< HEAD
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+=======
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
       
       <guid>/categories/r/</guid>
       <description></description>
     </item>
     
     <item>
+<<<<<<< HEAD
       <title>bioinformatics</title>
       <link>/categories/bioinformatics/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
@@ -33,6 +42,11 @@
       <title>ggplot</title>
       <link>/categories/ggplot/</link>
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+=======
+      <title>ggplot</title>
+      <link>/categories/ggplot/</link>
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
       
       <guid>/categories/ggplot/</guid>
       <description></description>
@@ -41,7 +55,11 @@
     <item>
       <title>stats</title>
       <link>/categories/stats/</link>
+<<<<<<< HEAD
       <pubDate>Wed, 17 Jul 2019 00:00:00 +0000</pubDate>
+=======
+      <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+>>>>>>> 9f7f4aec67abb1338613266d7a71cf9614fbf53e
       
       <guid>/categories/stats/</guid>
       <description></description>
