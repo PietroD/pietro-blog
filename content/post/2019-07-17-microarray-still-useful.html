@@ -16,15 +16,6 @@ categories:
 - bioinformatics
 ---
 
-<script src="/rmarkdown-libs/htmlwidgets/htmlwidgets.js"></script>
-<script src="/rmarkdown-libs/jquery/jquery.min.js"></script>
-<link href="/rmarkdown-libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/datatables-binding/datatables.js"></script>
-<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="/rmarkdown-libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/dt-core/js/jquery.dataTables.min.js"></script>
-<link href="/rmarkdown-libs/crosstalk/css/crosstalk.css" rel="stylesheet" />
-<script src="/rmarkdown-libs/crosstalk/js/crosstalk.min.js"></script>
 
 
 <p>I work on pancreatic cancer <strong>-omics</strong>. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.</p>
@@ -50,9 +41,1141 @@ mat &lt;- exprs(x)
 
 dim(mat)</code></pre>
 <p>[1] 49386 131</p>
-<pre class="r"><code>#kable(mat[1:4, 1:8], caption = &#39;Firt line of the expression matrix&#39;)
-DT::datatable(mat[1:4, 1:8])</code></pre>
-<div id="htmlwidget-1" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1">{"x":{"filter":"none","data":[["11715100_at","11715101_s_at","11715102_x_at","11715103_x_at"],[3.41271352131561,4.34520727191099,3.05482325206007,4.51032552600467],[3.73690603038194,3.74789230847749,3.07692204607433,4.15610281446874],[3.30055944426299,4.4700687857588,2.89736300095387,3.45634364592096],[3.22303500598219,3.99447477602346,3.17501026211773,4.06423552450107],[3.07350367780166,4.36636060641926,2.69546717702687,4.22772768397451],[3.14152279181929,4.00295770868478,2.94850402506202,4.2719019118133],[3.17915648366528,3.86346290563815,2.88120985445768,4.71734265793437],[3.2764493608665,4.11623641988801,3.08122282001335,4.29605566502748]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>GSM1520738<\/th>\n      <th>GSM1520739<\/th>\n      <th>GSM1520740<\/th>\n      <th>GSM1520741<\/th>\n      <th>GSM1520742<\/th>\n      <th>GSM1520743<\/th>\n      <th>GSM1520744<\/th>\n      <th>GSM1520745<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<pre class="r"><code>kable(mat[1:8, 1:5], caption = &#39;Few lines of the expression matrix&#39;)</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Few lines of the expression matrix</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">GSM1520738</th>
+<th align="right">GSM1520739</th>
+<th align="right">GSM1520740</th>
+<th align="right">GSM1520741</th>
+<th align="right">GSM1520742</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11715100_at</td>
+<td align="right">3.412714</td>
+<td align="right">3.736906</td>
+<td align="right">3.300559</td>
+<td align="right">3.223035</td>
+<td align="right">3.073504</td>
+</tr>
+<tr class="even">
+<td>11715101_s_at</td>
+<td align="right">4.345207</td>
+<td align="right">3.747892</td>
+<td align="right">4.470069</td>
+<td align="right">3.994475</td>
+<td align="right">4.366361</td>
+</tr>
+<tr class="odd">
+<td>11715102_x_at</td>
+<td align="right">3.054823</td>
+<td align="right">3.076922</td>
+<td align="right">2.897363</td>
+<td align="right">3.175010</td>
+<td align="right">2.695467</td>
+</tr>
+<tr class="even">
+<td>11715103_x_at</td>
+<td align="right">4.510326</td>
+<td align="right">4.156103</td>
+<td align="right">3.456344</td>
+<td align="right">4.064235</td>
+<td align="right">4.227728</td>
+</tr>
+<tr class="odd">
+<td>11715104_s_at</td>
+<td align="right">3.229649</td>
+<td align="right">3.367871</td>
+<td align="right">3.030241</td>
+<td align="right">3.249097</td>
+<td align="right">2.973494</td>
+</tr>
+<tr class="even">
+<td>11715105_at</td>
+<td align="right">4.554059</td>
+<td align="right">3.486847</td>
+<td align="right">3.294781</td>
+<td align="right">3.137451</td>
+<td align="right">2.961364</td>
+</tr>
+<tr class="odd">
+<td>11715106_x_at</td>
+<td align="right">3.103925</td>
+<td align="right">3.377799</td>
+<td align="right">3.467268</td>
+<td align="right">3.585230</td>
+<td align="right">3.940851</td>
+</tr>
+<tr class="even">
+<td>11715107_s_at</td>
+<td align="right">3.082911</td>
+<td align="right">4.107503</td>
+<td align="right">3.012626</td>
+<td align="right">3.033756</td>
+<td align="right">3.222768</td>
+</tr>
+</tbody>
+</table>
+<p>Then we explore the distrbution of samples’ expression values with a boxplot</p>
 <pre class="r"><code>boxplot(mat, outline=F, main=&#39;GSE62165&#39;)</code></pre>
-<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-2.svg" width="672" /></p>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-5-1.svg" width="672" /></p>
+<p>What about annotation data? They are stored in <code>fData</code> slot. We save them in a unique object and look for the <strong>Gene Symbol</strong> column, that we will use to replace row names (probes id).</p>
+<pre class="r"><code>ann &lt;- fData(x)
+
+kable(colnames(ann))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">ID</td>
+</tr>
+<tr class="even">
+<td align="left">GeneChip Array</td>
+</tr>
+<tr class="odd">
+<td align="left">Species Scientific Name</td>
+</tr>
+<tr class="even">
+<td align="left">Annotation Date</td>
+</tr>
+<tr class="odd">
+<td align="left">Sequence Type</td>
+</tr>
+<tr class="even">
+<td align="left">Sequence Source</td>
+</tr>
+<tr class="odd">
+<td align="left">Transcript ID(Array Design)</td>
+</tr>
+<tr class="even">
+<td align="left">Target Description</td>
+</tr>
+<tr class="odd">
+<td align="left">Representative Public ID</td>
+</tr>
+<tr class="even">
+<td align="left">Archival UniGene Cluster</td>
+</tr>
+<tr class="odd">
+<td align="left">UniGene ID</td>
+</tr>
+<tr class="even">
+<td align="left">Genome Version</td>
+</tr>
+<tr class="odd">
+<td align="left">Alignments</td>
+</tr>
+<tr class="even">
+<td align="left">Gene Title</td>
+</tr>
+<tr class="odd">
+<td align="left">Gene Symbol</td>
+</tr>
+<tr class="even">
+<td align="left">Chromosomal Location</td>
+</tr>
+<tr class="odd">
+<td align="left">GB_LIST</td>
+</tr>
+<tr class="even">
+<td align="left">SPOT_ID</td>
+</tr>
+<tr class="odd">
+<td align="left">Unigene Cluster Type</td>
+</tr>
+<tr class="even">
+<td align="left">Ensembl</td>
+</tr>
+<tr class="odd">
+<td align="left">Entrez Gene</td>
+</tr>
+<tr class="even">
+<td align="left">SwissProt</td>
+</tr>
+<tr class="odd">
+<td align="left">EC</td>
+</tr>
+<tr class="even">
+<td align="left">OMIM</td>
+</tr>
+<tr class="odd">
+<td align="left">RefSeq Protein ID</td>
+</tr>
+<tr class="even">
+<td align="left">RefSeq Transcript ID</td>
+</tr>
+<tr class="odd">
+<td align="left">FlyBase</td>
+</tr>
+<tr class="even">
+<td align="left">AGI</td>
+</tr>
+<tr class="odd">
+<td align="left">WormBase</td>
+</tr>
+<tr class="even">
+<td align="left">MGI Name</td>
+</tr>
+<tr class="odd">
+<td align="left">RGD Name</td>
+</tr>
+<tr class="even">
+<td align="left">SGD accession number</td>
+</tr>
+<tr class="odd">
+<td align="left">Gene Ontology Biological Process</td>
+</tr>
+<tr class="even">
+<td align="left">Gene Ontology Cellular Component</td>
+</tr>
+<tr class="odd">
+<td align="left">Gene Ontology Molecular Function</td>
+</tr>
+<tr class="even">
+<td align="left">Pathway</td>
+</tr>
+<tr class="odd">
+<td align="left">InterPro</td>
+</tr>
+<tr class="even">
+<td align="left">Trans Membrane</td>
+</tr>
+<tr class="odd">
+<td align="left">QTL</td>
+</tr>
+<tr class="even">
+<td align="left">Annotation Description</td>
+</tr>
+<tr class="odd">
+<td align="left">Annotation Transcript Cluster</td>
+</tr>
+<tr class="even">
+<td align="left">Transcript Assignments</td>
+</tr>
+<tr class="odd">
+<td align="left">Annotation Notes</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code># Subset to columns we&#39;ll use
+ann &lt;- ann[,c(&#39;ID&#39;, &#39;Gene Symbol&#39;)]</code></pre>
+<p>For my project I need to work only with cancer samples, so we explore <strong>pheno data</strong>, stored in the slot <code>pData</code> to identify them.</p>
+<pre class="r"><code>phenodata &lt;- pData(x)
+
+# From here https://stackoverflow.com/questions/51316238/find-substring-in-dataframe-in-r I found I nice way to identify the position of a string in the entire dataframe; 
+# I am looking for the word tumor (or similar) that usually is not in the colnames
+which(array(grepl(&quot;\\btumor\\b&quot;,as.matrix(phenodata)),dim(phenodata)),T)</code></pre>
+<pre><code>   row col</code></pre>
+<p>[1,] 1 10
+[2,] 3 10
+[3,] 4 10
+[4,] 5 10
+[5,] 6 10
+[6,] 7 10
+[7,] 8 10
+[8,] 9 10
+[9,] 10 10
+[10,] 11 10
+[11,] 12 10
+[12,] 14 10
+[13,] 15 10
+[14,] 16 10
+[15,] 17 10
+[16,] 18 10
+[17,] 19 10
+[18,] 20 10
+[19,] 21 10
+[20,] 22 10
+[21,] 23 10
+[22,] 24 10
+[23,] 26 10
+[24,] 27 10
+[25,] 28 10
+[26,] 29 10
+[27,] 30 10
+[28,] 31 10
+[29,] 32 10
+[30,] 33 10
+[31,] 34 10
+[32,] 35 10
+[33,] 36 10
+[34,] 37 10
+[35,] 38 10
+[36,] 39 10
+[37,] 41 10
+[38,] 42 10
+[39,] 43 10
+[40,] 44 10
+[41,] 45 10
+[42,] 46 10
+[43,] 48 10
+[44,] 49 10
+[45,] 50 10
+[46,] 51 10
+[47,] 52 10
+[48,] 53 10
+[49,] 54 10
+[50,] 55 10
+[51,] 56 10
+[52,] 57 10
+[53,] 58 10
+[54,] 59 10
+[55,] 60 10
+[56,] 61 10
+[57,] 62 10
+[58,] 63 10
+[59,] 64 10
+[60,] 65 10
+[61,] 66 10
+[62,] 67 10
+[63,] 68 10
+[64,] 69 10
+[65,] 70 10
+[66,] 72 10
+[67,] 73 10
+[68,] 74 10
+[69,] 75 10
+[70,] 76 10
+[71,] 77 10
+[72,] 78 10
+[73,] 79 10
+[74,] 80 10
+[75,] 81 10
+[76,] 82 10
+[77,] 83 10
+[78,] 84 10
+[79,] 85 10
+[80,] 86 10
+[81,] 88 10
+[82,] 89 10
+[83,] 90 10
+[84,] 91 10
+[85,] 92 10
+[86,] 93 10
+[87,] 94 10
+[88,] 95 10
+[89,] 96 10
+[90,] 97 10
+[91,] 98 10
+[92,] 99 10
+[93,] 100 10
+[94,] 101 10
+[95,] 102 10
+[96,] 103 10
+[97,] 104 10
+[98,] 106 10
+[99,] 107 10
+[100,] 109 10
+[101,] 110 10
+[102,] 111 10
+[103,] 113 10
+[104,] 114 10
+[105,] 115 10
+[106,] 116 10
+[107,] 117 10
+[108,] 119 10
+[109,] 120 10
+[110,] 121 10
+[111,] 122 10
+[112,] 124 10
+[113,] 125 10
+[114,] 126 10
+[115,] 127 10
+[116,] 129 10
+[117,] 130 10
+[118,] 131 10
+[119,] 1 39
+[120,] 3 39
+[121,] 4 39
+[122,] 5 39
+[123,] 6 39
+[124,] 7 39
+[125,] 8 39
+[126,] 9 39
+[127,] 10 39
+[128,] 11 39
+[129,] 12 39
+[130,] 14 39
+[131,] 15 39
+[132,] 16 39
+[133,] 17 39
+[134,] 18 39
+[135,] 19 39
+[136,] 20 39
+[137,] 21 39
+[138,] 22 39
+[139,] 23 39
+[140,] 24 39
+[141,] 26 39
+[142,] 27 39
+[143,] 28 39
+[144,] 29 39
+[145,] 30 39
+[146,] 31 39
+[147,] 32 39
+[148,] 33 39
+[149,] 34 39
+[150,] 35 39
+[151,] 36 39
+[152,] 37 39
+[153,] 38 39
+[154,] 39 39
+[155,] 41 39
+[156,] 42 39
+[157,] 43 39
+[158,] 44 39
+[159,] 45 39
+[160,] 46 39
+[161,] 48 39
+[162,] 49 39
+[163,] 50 39
+[164,] 51 39
+[165,] 52 39
+[166,] 53 39
+[167,] 54 39
+[168,] 55 39
+[169,] 56 39
+[170,] 57 39
+[171,] 58 39
+[172,] 59 39
+[173,] 60 39
+[174,] 61 39
+[175,] 62 39
+[176,] 63 39
+[177,] 64 39
+[178,] 65 39
+[179,] 66 39
+[180,] 67 39
+[181,] 68 39
+[182,] 69 39
+[183,] 70 39
+[184,] 72 39
+[185,] 73 39
+[186,] 74 39
+[187,] 75 39
+[188,] 76 39
+[189,] 77 39
+[190,] 78 39
+[191,] 79 39
+[192,] 80 39
+[193,] 81 39
+[194,] 82 39
+[195,] 83 39
+[196,] 84 39
+[197,] 85 39
+[198,] 86 39
+[199,] 88 39
+[200,] 89 39
+[201,] 90 39
+[202,] 91 39
+[203,] 92 39
+[204,] 93 39
+[205,] 94 39
+[206,] 95 39
+[207,] 96 39
+[208,] 97 39
+[209,] 98 39
+[210,] 99 39
+[211,] 100 39
+[212,] 101 39
+[213,] 102 39
+[214,] 103 39
+[215,] 104 39
+[216,] 106 39
+[217,] 107 39
+[218,] 109 39
+[219,] 110 39
+[220,] 111 39
+[221,] 113 39
+[222,] 114 39
+[223,] 115 39
+[224,] 116 39
+[225,] 117 39
+[226,] 119 39
+[227,] 120 39
+[228,] 121 39
+[229,] 122 39
+[230,] 124 39
+[231,] 125 39
+[232,] 126 39
+[233,] 127 39
+[234,] 129 39
+[235,] 130 39
+[236,] 131 39</p>
+<pre class="r"><code># The word is included in the columns 10 and 39; let&#39;s check them
+kable(phenodata[,c(10,39)])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">characteristics_ch1</th>
+<th align="left">tissue:ch1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GSM1520738</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520739</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520740</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520741</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520742</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520743</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520744</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520745</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520746</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520747</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520748</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520749</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520750</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520751</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520752</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520753</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520754</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520755</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520756</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520757</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520758</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520759</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520760</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520761</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520762</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520763</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520764</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520765</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520766</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520767</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520768</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520769</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520770</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520771</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520772</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520773</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520774</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520775</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520776</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520777</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520778</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520779</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520780</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520781</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520782</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520783</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520784</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520785</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520786</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520787</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520788</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520789</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520790</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520791</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520792</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520793</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520794</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520795</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520796</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520797</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520798</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520799</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520800</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520801</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520802</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520803</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520804</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520805</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520806</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520807</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520808</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520809</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520810</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520811</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520812</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520813</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520814</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520815</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520816</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520817</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520818</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520819</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520820</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520821</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520822</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520823</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520824</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520825</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520826</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520827</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520828</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520829</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520830</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520831</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520832</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520833</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520834</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520835</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520836</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520837</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520838</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520839</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520840</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520841</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520842</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520843</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520844</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520845</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520846</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520847</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520848</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520849</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520850</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520851</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520852</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520853</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520854</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520855</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520856</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520857</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520858</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520859</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520860</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="even">
+<td>GSM1520861</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520862</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520863</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520864</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520865</td>
+<td align="left">tissue: non-tumoral pancreatic tissue</td>
+<td align="left">non-tumoral pancreatic tissue</td>
+</tr>
+<tr class="odd">
+<td>GSM1520866</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="even">
+<td>GSM1520867</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+<tr class="odd">
+<td>GSM1520868</td>
+<td align="left">tissue: pancreatic tumor</td>
+<td align="left">pancreatic tumor</td>
+</tr>
+</tbody>
+</table>

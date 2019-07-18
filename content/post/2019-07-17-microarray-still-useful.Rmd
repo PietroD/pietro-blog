@@ -67,9 +67,42 @@ mat <- exprs(x)
 
 dim(mat)
 
-#kable(mat[1:4, 1:8], caption = 'Firt line of the expression matrix')
-DT::datatable(mat[1:4, 1:8])
+kable(mat[1:8, 1:5], caption = 'Few lines of the expression matrix')
+```
 
+Then we explore the distrbution of samples' expression values with a boxplot
+
+```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 boxplot(mat, outline=F, main='GSE62165')
 ```
+
+What about annotation data? They are stored in `fData` slot. We save them in a unique object and look for the **Gene Symbol** column, that we will use to replace row names (probes id).
+
+```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
+ann <- fData(x)
+
+kable(colnames(ann))
+
+# Subset to columns we'll use
+ann <- ann[,c('ID', 'Gene Symbol')]
+```
+
+For my project I need to work only with cancer samples, so we explore **pheno data**, stored in the slot `pData` to identify them.
+
+```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
+phenodata <- pData(x)
+
+# From here https://stackoverflow.com/questions/51316238/find-substring-in-dataframe-in-r I found I nice way to identify the position of a string in the entire dataframe; 
+# I am looking for the word tumor (or similar) that usually is not in the colnames
+which(array(grepl("\\btumor\\b",as.matrix(phenodata)),dim(phenodata)),T)
+```
+
+```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
+# The word is included in the columns 10 and 39; let's check them
+kable(phenodata[,c(10,39)])
+```
+
+
+
+
 
