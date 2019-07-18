@@ -22,6 +22,7 @@ library(tidyverse)
 library(reshape2)
 library(GEOquery)
 library(DT)
+library(knitr)
 ```
 
 I work on pancreatic cancer **-omics**. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.
@@ -60,9 +61,13 @@ x <- getGEO(filename = 'GSE62165_series_matrix.txt.gz')
 
 Then we can start exploring the data
 
-```{r message=FALSE, warning=FALSE, dev='svg'}
+```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 # First we save the expression matrix in a different object
 mat <- exprs(x)
+
+dim(mat)
+
+kable(mat[1:4, 1:8], caption = 'Firt line of the expression matrix')
 
 boxplot(mat, outline=F)
 ```
