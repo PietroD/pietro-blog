@@ -94,13 +94,84 @@ phenodata <- pData(x)
 
 # From here https://stackoverflow.com/questions/51316238/find-substring-in-dataframe-in-r I found I nice way to identify the position of a string in the entire dataframe; 
 # I am looking for the word tumor (or similar) that usually is not in the colnames
-datatable(which(array(grepl("\\btumor\\b",as.matrix(phenodata)),dim(phenodata)),T))
+unique(which(array(grepl("\\btumor\\b",as.matrix(phenodata)),dim(phenodata)),T)[,2])
 ```
 
 ```{r message=FALSE, warning=FALSE, dev='svg'}
 # The word is included in the columns 10 and 39; let's check them
 datatable(phenodata[,c(10,39)])
 ```
+
+Subset to the columns we will need. In particular column `tissue:ch1` that has a more clear nomenclature.
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+# We also rename the column
+phenodata <- data.frame(tissue = phenodata[,39])
+```
+
+We use the info contained in this column to subset the matrix to only the cancer samples. We remember that original matrix had 131 samples (columns).
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+mat <- mat[, !grepl('non-tumoral', phenodata$tissue)]
+
+dim(mat)
+```
+
+We are left with 118 samples.
+
+Since my final aim is to apply some particular functions that need one row per gene, we have to face the neverending problem of having multiple probes matching to the same gene. We saw that in total we have more than 40K probe IDs. So we surely have genes with more than one probe matching.
+
+Here I apply the average over multiple probes. I know that this is an approximation, but here we really need to have a single gene for each patients (also I take with very high consideration the words from Gordon Smyth https://support.bioconductor.org/p/44161/)
+
+I know that there is the `avereps` function from `limma` package, but I like to write my own scripts, so I wrote a script with the **tidyverse** style that makes use of `group_by` and `summarize` functions. We use the annotation df to find out which genes have multiple probes.
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+# Save to new object
+mat_mean <- mat %>% 
+    as.data.frame() %>% 
+    rownames_to_column('ID') %>%  
+    left_join(ann, by='ID') %>% 
+    dplyr::select(-ID) %>% 
+    dplyr::rename(SYMBOL = 'Gene Symbol') %>%
+    # remove NAs
+    dplyr::filter(!is.na(SYMBOL)) %>%
+    # remove empty values
+    dplyr::filter(!SYMBOL == '') %>%
+    # find the groups by genes
+    group_by(SYMBOL) %>% 
+    # apply mean by these groups 
+    summarize_all(.funs = mean, na.rm=T) %>%  
+    # go back to matrix format
+    column_to_rownames('SYMBOL') %>% 
+    as.matrix()
+
+kable(mat_mean[1:8, 1:5], caption = 'Few lines of the expression matrix with averaged probes')
+```
+
+Now we have a sort of gene expression matrix ready to be used for cool things.
+Before, I would like to show another `tidyverse` method for obtaining histograms for each sample of the expression matrix. Sometimes it is useful, besides boxplot, to spot strange samples.
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+# Since we are dealing with a lot of samples, we'll plot a subset
+mat_mean[,1:16] %>% 
+    as.data.frame() %>%
+    rownames_to_column('ID') %>% 
+    melt() %>%
+    
+    ggplot(aes(value)) +
+    geom_histogram() +
+    facet_wrap(~variable)
+```
+
+
+
+
+
+
+
+
+
+
 
 
 
