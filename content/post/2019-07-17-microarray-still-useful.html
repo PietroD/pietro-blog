@@ -38,10 +38,72 @@ Now we load them back.</p>
 <pre class="r"><code>x &lt;- getGEO(filename = &#39;GSE62165_series_matrix.txt.gz&#39;)</code></pre>
 <p>Then we can start exploring the data</p>
 <pre class="r"><code># First we save the expression matrix in a different object
-#mat &lt;- exprs(x)
+mat &lt;- exprs(x)
 
-#dim(mat)
-
-#kable(mat[1:4, 1:8], caption = &#39;Firt line of the expression matrix&#39;)
-
-#boxplot(mat, outline=F)</code></pre>
+dim(mat)</code></pre>
+<p>[1] 49386 131</p>
+<pre class="r"><code>kable(mat[1:4, 1:8], caption = &#39;Firt line of the expression matrix&#39;)</code></pre>
+<table>
+<caption><span id="tab:unnamed-chunk-4">Table 1: </span>Firt line of the expression matrix</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">GSM1520738</th>
+<th align="right">GSM1520739</th>
+<th align="right">GSM1520740</th>
+<th align="right">GSM1520741</th>
+<th align="right">GSM1520742</th>
+<th align="right">GSM1520743</th>
+<th align="right">GSM1520744</th>
+<th align="right">GSM1520745</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>11715100_at</td>
+<td align="right">3.412714</td>
+<td align="right">3.736906</td>
+<td align="right">3.300559</td>
+<td align="right">3.223035</td>
+<td align="right">3.073504</td>
+<td align="right">3.141523</td>
+<td align="right">3.179156</td>
+<td align="right">3.276449</td>
+</tr>
+<tr class="even">
+<td>11715101_s_at</td>
+<td align="right">4.345207</td>
+<td align="right">3.747892</td>
+<td align="right">4.470069</td>
+<td align="right">3.994475</td>
+<td align="right">4.366361</td>
+<td align="right">4.002958</td>
+<td align="right">3.863463</td>
+<td align="right">4.116236</td>
+</tr>
+<tr class="odd">
+<td>11715102_x_at</td>
+<td align="right">3.054823</td>
+<td align="right">3.076922</td>
+<td align="right">2.897363</td>
+<td align="right">3.175010</td>
+<td align="right">2.695467</td>
+<td align="right">2.948504</td>
+<td align="right">2.881210</td>
+<td align="right">3.081223</td>
+</tr>
+<tr class="even">
+<td>11715103_x_at</td>
+<td align="right">4.510326</td>
+<td align="right">4.156103</td>
+<td align="right">3.456344</td>
+<td align="right">4.064235</td>
+<td align="right">4.227728</td>
+<td align="right">4.271902</td>
+<td align="right">4.717343</td>
+<td align="right">4.296056</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>boxplot(mat, outline=F)</code></pre>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-4-1.svg" width="672" /></p>
