@@ -372,7 +372,7 @@ boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
     ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
     geom_boxplot(outlier.shape = NA) +
     
-    ggpubr::stat_compare_means(aes(group=`Z-score`), label = &quot;p.format&quot;, method = &#39;t.test&#39;) +
+    stat_compare_means(aes(group=`Z-score`), label = &quot;p.format&quot;, method = &#39;t.test&#39;) +
     
     theme_bw() +
     theme(axis.title.x = element_blank(),
@@ -380,7 +380,7 @@ boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
           axis.text.y = element_text(size=14, color=&#39;black&#39;)) +
     xlab(&#39;&#39;) +
     ylab(&#39;&#39;) +
-    ggsci::scale_fill_npg()</code></pre>
+    scale_fill_npg()</code></pre>
 <p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-19-1.svg" width="768" /></p>
 
     </div>

@@ -24,6 +24,7 @@ library(GEOquery)
 library(DT)
 library(knitr)
 library(ggsci)
+library(ggpubr)
 ```
 
 I work on pancreatic cancer **-omics**. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.
@@ -223,7 +224,7 @@ mat_zscore_global[c('ACTB', 'KRAS', 'IGFBP4'),] %>%
     ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
     geom_boxplot(outlier.shape = NA) +
     
-    ggpubr::stat_compare_means(aes(group=`Z-score`), label = "p.format", method = 't.test') +
+    stat_compare_means(aes(group=`Z-score`), label = "p.format", method = 't.test') +
     
     theme_bw() +
     theme(axis.title.x = element_blank(),
@@ -231,7 +232,7 @@ mat_zscore_global[c('ACTB', 'KRAS', 'IGFBP4'),] %>%
           axis.text.y = element_text(size=14, color='black')) +
     xlab('') +
     ylab('') +
-    ggsci::scale_fill_npg()
+    scale_fill_npg()
 ```
 
 
