@@ -341,7 +341,7 @@ mat_mean[,1:16] %&gt;%
 <p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-14-1.svg" width="672" /></p>
 <p>To make results more comparable across datasets, something very useful especially when doing deep data mining (in total I collected more than 1300 pancreatic cancer samples from 16 experiments) is to obtain <em>Z-scores</em> from the expression matrix.</p>
 <p>From the <code>phenoData</code> slot we appreciate that the expression data we downloaded were already normalized and <code>log2</code> transformed.</p>
-<p>The standardization procedure (Z-scores) is usually performed on already normalized datasets. So we can apply it straight to the <code>mat_mean</code> object. Before we define a function.</p>
+<p>The standardization procedure (<em>Z-scores</em>) is usually performed on already normalized datasets. So we can apply it straight to the <code>mat_mean</code> object. Before we define a function.</p>
 <pre class="r"><code>zscore &lt;- function(x) {
     z &lt;- (x - mean(x, na.rm=T)) / sd(x, na.rm=T)
     return(z)
@@ -356,7 +356,29 @@ mat_mean[,1:16] %&gt;%
 
 boxplot(mat_zscore_global, outline=F, main=&#39;Z-scores global&#39;)
 boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
-<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-18-1.svg" width="672" /></p>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-18-1.svg" width="110%" /></p>
+<p>The two methods yield different results. It always amazes me how even simple things like that are not reported clearly in papers and then lead to different results when downstream analysis are performed. I will dig more into this.</p>
+<p>When I say that they give different results I mean this:</p>
+<pre class="r"><code>mat_zscore_global[c(&#39;ACTB&#39;, &#39;KRAS&#39;, &#39;IGFBP4&#39;),] %&gt;% 
+    as.data.frame() %&gt;% 
+    rownames_to_column(&#39;SYMBOL&#39;) %&gt;% 
+    mutate(`Z-score` = &#39;Global&#39;) %&gt;% 
+    bind_rows( mat_zscore_gene[c(&#39;ACTB&#39;, &#39;KRAS&#39;, &#39;IGFBP4&#39;),] %&gt;% 
+    as.data.frame() %&gt;% 
+    rownames_to_column(&#39;SYMBOL&#39;) %&gt;% 
+    mutate(`Z-score` = &#39;Gene&#39;) ) %&gt;% 
+    melt() %&gt;% 
+    
+    ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
+    geom_boxplot(outlier.shape = NA) +
+    theme_bw() +
+    theme(axis.title.x = element_blank(),
+          axis.text.x = element_text(size=14, color=&#39;black&#39;),
+          axis.text.y = element_text(size=14, color=&#39;black&#39;)) +
+    xlab(&#39;&#39;) +
+    ylab(&#39;&#39;) +
+    ggsci::scale_fill_npg()</code></pre>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-19-1.svg" width="110%" /></p>
 
     </div>
   </article>

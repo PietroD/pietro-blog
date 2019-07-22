@@ -23,6 +23,7 @@ library(reshape2)
 library(GEOquery)
 library(DT)
 library(knitr)
+library(ggsci)
 ```
 
 I work on pancreatic cancer **-omics**. Data mining on published data is a real source of gold today when someone wants to find confirmation of an hypothesis on a more general scale than his own dataset.
@@ -172,7 +173,7 @@ To make results more comparable across datasets, something very useful especiall
 
 From the `phenoData` slot we appreciate that the expression data we downloaded were already normalized and `log2` transformed.
 
-The standardization procedure (Z-scores) is usually performed on already normalized datasets. So we can apply it straight to the `mat_mean` object. Before we define a function.
+The standardization procedure (*Z-scores*) is usually performed on already normalized datasets. So we can apply it straight to the `mat_mean` object. Before we define a function.
 
 ```{r message=FALSE, warning=FALSE, dev='svg'}
 zscore <- function(x) {
@@ -197,14 +198,38 @@ mat_zscore_gene <- t(scale(t(mat_mean)))
 
 In general, it would be useful that everytime someone reports gene expression data in *Z-scores* terms, to explicitly state how the standardization was performed. I am not myself a statistician, so I cannot say concretely what the difference would be, but to be extremely reproducible, something that every scientist should aim to, every method, even simple, should be described clearly.
 
-
-```{r message=FALSE, warning=FALSE, dev='svg'}
+```{r message=FALSE, warning=FALSE, dev='svg', out.width='110%'}
 par(mfrow=c(1,2))
 
 boxplot(mat_zscore_global, outline=F, main='Z-scores global')
 boxplot(mat_zscore_gene, outline=F, main='Z-scores gene')
 ```
 
+The two methods yield different results. It always amazes me how even simple things like that are not reported clearly in papers and then lead to different results when downstream analysis are performed. I will dig more into this.
+
+When I say that they give different results I mean this:
+
+```{r message=FALSE, warning=FALSE, dev='svg', out.width='110%'}
+mat_zscore_global[c('ACTB', 'KRAS', 'IGFBP4'),] %>% 
+    as.data.frame() %>% 
+    rownames_to_column('SYMBOL') %>% 
+    mutate(`Z-score` = 'Global') %>% 
+    bind_rows( mat_zscore_gene[c('ACTB', 'KRAS', 'IGFBP4'),] %>% 
+    as.data.frame() %>% 
+    rownames_to_column('SYMBOL') %>% 
+    mutate(`Z-score` = 'Gene') ) %>% 
+    melt() %>% 
+    
+    ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
+    geom_boxplot(outlier.shape = NA) +
+    theme_bw() +
+    theme(axis.title.x = element_blank(),
+          axis.text.x = element_text(size=14, color='black'),
+          axis.text.y = element_text(size=14, color='black')) +
+    xlab('') +
+    ylab('') +
+    ggsci::scale_fill_npg()
+```
 
 
 
