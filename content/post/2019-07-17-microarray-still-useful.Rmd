@@ -222,6 +222,9 @@ mat_zscore_global[c('ACTB', 'KRAS', 'IGFBP4'),] %>%
     
     ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
     geom_boxplot(outlier.shape = NA) +
+    
+    ggpubr::stat_compare_means(aes(group=`Z-score`), label = "p.format", method = 't.test') +
+    
     theme_bw() +
     theme(axis.title.x = element_blank(),
           axis.text.x = element_text(size=14, color='black'),

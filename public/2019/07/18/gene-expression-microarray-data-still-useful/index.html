@@ -371,6 +371,9 @@ boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
     
     ggplot(aes(SYMBOL, value, fill=`Z-score`)) +
     geom_boxplot(outlier.shape = NA) +
+    
+    ggpubr::stat_compare_means(aes(group=`Z-score`), label = &quot;p.format&quot;, method = &#39;t.test&#39;) +
+    
     theme_bw() +
     theme(axis.title.x = element_blank(),
           axis.text.x = element_text(size=14, color=&#39;black&#39;),
