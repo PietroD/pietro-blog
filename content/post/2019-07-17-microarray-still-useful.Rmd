@@ -198,7 +198,7 @@ mat_zscore_gene <- t(scale(t(mat_mean)))
 
 In general, it would be useful that everytime someone reports gene expression data in *Z-scores* terms, to explicitly state how the standardization was performed. I am not myself a statistician, so I cannot say concretely what the difference would be, but to be extremely reproducible, something that every scientist should aim to, every method, even simple, should be described clearly.
 
-```{r message=FALSE, warning=FALSE, dev='svg', out.width='110%'}
+```{r message=FALSE, warning=FALSE, dev='svg', fig.width=9, fig.height=5}
 par(mfrow=c(1,2))
 
 boxplot(mat_zscore_global, outline=F, main='Z-scores global')
@@ -209,7 +209,7 @@ The two methods yield different results. It always amazes me how even simple thi
 
 When I say that they give different results I mean this:
 
-```{r message=FALSE, warning=FALSE, dev='svg', out.width='110%'}
+```{r message=FALSE, warning=FALSE, dev='svg', fig.width=8, fig.height=5}
 mat_zscore_global[c('ACTB', 'KRAS', 'IGFBP4'),] %>% 
     as.data.frame() %>% 
     rownames_to_column('SYMBOL') %>% 

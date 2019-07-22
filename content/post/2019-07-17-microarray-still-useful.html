@@ -300,7 +300,7 @@ mat_mean[,1:16] %&gt;%
 
 boxplot(mat_zscore_global, outline=F, main=&#39;Z-scores global&#39;)
 boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
-<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-18-1.svg" width="110%" /></p>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-18-1.svg" width="864" /></p>
 <p>The two methods yield different results. It always amazes me how even simple things like that are not reported clearly in papers and then lead to different results when downstream analysis are performed. I will dig more into this.</p>
 <p>When I say that they give different results I mean this:</p>
 <pre class="r"><code>mat_zscore_global[c(&#39;ACTB&#39;, &#39;KRAS&#39;, &#39;IGFBP4&#39;),] %&gt;% 
@@ -322,4 +322,4 @@ boxplot(mat_zscore_gene, outline=F, main=&#39;Z-scores gene&#39;)</code></pre>
     xlab(&#39;&#39;) +
     ylab(&#39;&#39;) +
     ggsci::scale_fill_npg()</code></pre>
-<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-19-1.svg" width="110%" /></p>
+<p><img src="/post/2019-07-17-microarray-still-useful_files/figure-html/unnamed-chunk-19-1.svg" width="768" /></p>
