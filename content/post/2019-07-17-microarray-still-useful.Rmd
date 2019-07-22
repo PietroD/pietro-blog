@@ -59,18 +59,20 @@ x <- getGEO(filename = 'your/favourite/path/GSE62165_series_matrix.txt.gz')
 x <- getGEO(filename = 'GSE62165_series_matrix.txt.gz')
 ```
 
-Then we can start exploring the data
+Then we can start exploring the data.
 
 ```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 # First we save the expression matrix in a different object
 mat <- exprs(x)
 
 dim(mat)
+```
 
+```{r echo=FALSE}
 kable(mat[1:8, 1:5], caption = 'Few lines of the expression matrix')
 ```
 
-Then we explore the distrbution of samples' expression values with a boxplot
+Then we explore the distrbution of samples' expression values with a boxplot.
 
 ```{r message=FALSE, warning=FALSE, dev='svg', results='asis'}
 boxplot(mat, outline=F, main='GSE62165')
@@ -97,8 +99,9 @@ phenodata <- pData(x)
 unique(which(array(grepl("\\btumor\\b",as.matrix(phenodata)),dim(phenodata)),T)[,2])
 ```
 
-```{r message=FALSE, warning=FALSE, dev='svg'}
-# The word is included in the columns 10 and 39; let's check them
+The word is included in the columns 10 and 39; let's check them.
+
+```{r echo=FALSE}
 datatable(phenodata[,c(10,39)])
 ```
 
@@ -144,8 +147,10 @@ mat_mean <- mat %>%
     # go back to matrix format
     column_to_rownames('SYMBOL') %>% 
     as.matrix()
+```
 
-kable(mat_mean[1:8, 1:5], caption = 'Few lines of the expression matrix with averaged probes')
+```{r echo=FALSE}
+kable(mat_mean[2:8, 1:5], caption = 'Few lines of the expression matrix with averaged probes')
 ```
 
 Now we have a sort of gene expression matrix ready to be used for cool things.
@@ -163,10 +168,42 @@ mat_mean[,1:16] %>%
     facet_wrap(~variable)
 ```
 
+To make results more comparable across datasets, something very useful especially when doing deep data mining (in total I collected more than 1300 pancreatic cancer samples from 16 experiments) is to obtain *Z-scores* from the expression matrix.
+
+From the `phenoData` slot we appreciate that the expression data we downloaded were already normalized and `log2` transformed.
+
+The standardization procedure (Z-scores) is usually performed on already normalized datasets. So we can apply it straight to the `mat_mean` object. Before we define a function.
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+zscore <- function(x) {
+    z <- (x - mean(x, na.rm=T)) / sd(x, na.rm=T)
+    return(z)
+}
+```
+
+Then we obtain the *Z-score* matrix.
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+mat_zscore_global <- zscore(mat_mean)
+```
+
+From the above function you can see that the standardization is performed considering overall mean and overall standard deviation, that is, calculated all across the dataset. If you search online and on forums you will find different ways of obtaining *Z-scores* from gene expression studies (just a quick *Google* search will reveal quite a few discussion especially on **Biostars**). The main point here is the difference between a *Z-score* based on overall (population) statistics and one based on by row (that is, by gene) statistics. In brief, is it more correct to subtract and to divide a value by overall or by gene mean and SD? I have not found anything out there in literature about, only this [thread](https://stats.stackexchange.com/questions/201961/do-i-apply-normalization-per-entire-dataset-per-input-vector-or-per-feature). If you know something about, please comment!
+
+If we wanted to obtain *Z-scores* by row (by gene), then the `scale` function would come to help, but coupled with a transposition, because by default it operates by column. So, something like
+
+```{r message=FALSE, warning=FALSE, dev='svg'}
+mat_zscore_gene <- t(scale(t(mat_mean)))
+```
+
+In general, it would be useful that everytime someone reports gene expression data in *Z-scores* terms, to explicitly state how the standardization was performed. I am not myself a statistician, so I cannot say concretely what the difference would be, but to be extremely reproducible, something that every scientist should aim to, every method, even simple, should be described clearly.
 
 
+```{r message=FALSE, warning=FALSE, dev='svg'}
+par(mfrow=c(1,2))
 
-
+boxplot(mat_zscore_global, outline=F, main='Z-scores global')
+boxplot(mat_zscore_gene, outline=F, main='Z-scores gene')
+```
 
 
 
